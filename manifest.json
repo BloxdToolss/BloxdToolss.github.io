@@ -1,8 +1,0 @@
-{
-  "name": "Tools for Bloxd",
-  "display": "standalone",
-  
-  "display_override": [
-    "window-controls-overlay"
-  ]
-}
