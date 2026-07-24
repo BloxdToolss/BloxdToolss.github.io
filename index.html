@@ -61,6 +61,31 @@
       .header-right {
         display: flex;
         align-items: center;
+        gap: 20px;
+      }
+
+      .nav-icon {
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+
+      .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 33px;
+      }
+
+      .nav-btn:hover .nav-icon {
+        filter: invert(50%) brightness(50%);
+      }
+
+      .socials {
+        display: flex;
+        align-items: center;
         gap: 16px;
       }
 
@@ -206,6 +231,10 @@
         color: var(--border-color);
         user-select: none;
       }
+
+      .gap {
+        width: 12px;
+      }
     </style>
   </head>
   <body>
@@ -220,11 +249,19 @@
         </div>
       </div>
       <div class="header-right">
+        <div class="socials">
         <a href="https://discord.com/invite/C2TVxDSep3" class="social-link" target="_blank" rel="noopener noreferrer" title="Join our Discord">
           <img src="img/discord-logo.svg" class="social-icon" alt="Discord" />
         </a>
         <a href="https://github.com/BloxdToolss/" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow on Github">
           <img src="img/github-logo.svg" class="social-icon" alt="Github" />
+        </a>
+        </div>
+        
+        <div class="gap"></div>
+
+        <a href="/login" class="nav-btn" target="_blank" rel="noopener noreferrer" title="Login">
+          <img src="img/icons/user.svg" class="nav-icon" alt="Login" />
         </a>
       </div>
     </div>
