@@ -80,7 +80,8 @@
       }
 
       .nav-btn:hover .nav-icon {
-        filter: invert(50%) brightness(50%);
+        --pfpHover: invert(50%) brightness(50%);
+        filter: var(--pfpHover);
       }
 
       .socials {
@@ -353,7 +354,7 @@ async function loadProfile() {
     if (avatar) {
         userPfp.src = avatar;
         userPfp.alt = "Profile Picture";
-        userPfp.style = "border-radius: 50%; object-fit: cover; transition: none;"
+        userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(50%);"
         pfpBtn.title = "Profile Picture";
         pfpBtn.href = "";
     }
