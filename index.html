@@ -449,9 +449,10 @@ async function loadProfile() {
         userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
         pfpBtn.title = "";
         pfpBtn.href = "";
-        userDisplayName.textContent = user.user_metadata.full_name
-        userEmail.textContent = user.email || '';
+        
     }
+        userDisplayName.textContent = user.user_metadata.full_name
+        userEmail.textContent = user.email;
 }
 
 loadProfile();
