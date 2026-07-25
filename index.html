@@ -235,6 +235,11 @@
       .gap {
         width: 12px;
       }
+
+      .nav-icon.user-pfp {
+        border-radius: 50%;
+        object-fit: cover;
+      }
     </style>
   </head>
   <body>
@@ -261,7 +266,7 @@
         <div class="gap"></div>
 
         <a href="/login" class="nav-btn" rel="noopener noreferrer" title="Login">
-          <img src="img/icons/user.svg" class="nav-icon" alt="Login" />
+          <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
         </a>
       </div>
     </div>
@@ -325,6 +330,28 @@
   });
   card.style.cursor = 'pointer';
 });
+    </script>
+    <script>
+      async function loadProfile() {
+      const { data } = await supabaseClient.auth.getUser();
+
+      const user = data.user;
+
+      if (!user) return;
+
+      const avatar =
+          user.user_metadata.avatar_url ||
+          user.user_metadata.picture;
+
+      const userPfp = document.querySelector(".nav-icon.user-pfp");
+
+      if (avatar) {
+          userPfp.src = avatar;
+          userPfp.alt = "Profile Picture";
+      }
+  }
+
+  loadProfile();
     </script>
   </body>
 </html>
