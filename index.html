@@ -272,7 +272,7 @@
         gap: 4px;
       }
 
-      .user-display-name.dropdown-user-meta {
+      .userDisplayName.dropdown-user-meta {
         font-size: 20px;
         font-weight: 500;
       }
@@ -313,9 +313,9 @@
       <div class="dropdown-user-info">
         <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Profile Picture" />
         <div class="dropdown-user-meta">
-          <span class="user-display-name dropdown-user-meta"></span>
+          <span class="userDisplayName dropdown-user-meta"></span>
           <br>
-          <span class="user-email dropdown-user-meta"></span>
+          <span class="userEmail dropdown-user-meta"></span>
         </div>
       </div>
       
@@ -440,8 +440,8 @@ async function loadProfile() {
 
     const userPfp = document.querySelector(".nav-icon.user-pfp");
     const pfpBtn = document.querySelector(".nav-btn.user-pfp");
-    const userEmail = document.querySelector('.user-email');
-    const userDisplayName = document.querySelector('.user-display-name');
+    const userDisplayName = document.querySelector('.userDisplayName');
+    const userEmail = document.querySelector('.userEmail');
 
     if (avatar) {
         userPfp.src = avatar;
@@ -449,8 +449,8 @@ async function loadProfile() {
         userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
         pfpBtn.title = "";
         pfpBtn.href = "";
-        user-display-name.textContent = userDisplayName;
-        user-email.textContent = userEmail;
+        userDisplayName.textContent = user.user_metadata.full_name
+        userEmail.textContent = user.email || '';
     }
 }
 
