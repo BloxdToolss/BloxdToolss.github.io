@@ -235,11 +235,6 @@
       .gap {
         width: 12px;
       }
-
-      .nav-icon.user-pfp {
-        border-radius: 50%;
-        object-fit: cover;
-      }
     </style>
   </head>
   <body>
@@ -357,6 +352,7 @@ async function loadProfile() {
     if (avatar) {
         userPfp.src = avatar;
         userPfp.alt = "Profile Picture";
+        userPfp.style = "border-radius: 50%; object-fit: cover; transition: none;"
     }
 }
 
