@@ -438,7 +438,7 @@ async function loadProfile() {
         user.user_metadata.avatar_url ||
         user.user_metadata.picture;
 
-    const userPfp = document.querySelector(".nav-icon.user-pfp");
+    const userPfp = document.querySelectorAll(".nav-icon.user-pfp");
     const pfpBtn = document.querySelector(".nav-btn.user-pfp");
     const userDisplayName = document.querySelector('.userDisplayName');
     const userEmail = document.querySelector('.userEmail');
