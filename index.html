@@ -260,7 +260,7 @@
         
         <div class="gap"></div>
 
-        <a href="/login" class="nav-btn" rel="noopener noreferrer" title="Login">
+        <a href="/login" class="nav-btn user-pfp" rel="noopener noreferrer" title="Login">
           <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
         </a>
       </div>
@@ -348,11 +348,14 @@ async function loadProfile() {
         user.user_metadata.picture;
 
     const userPfp = document.querySelector(".nav-icon.user-pfp");
+    const pfpBtn = document.querySelector(".nav-btn.user-pfp");
 
     if (avatar) {
         userPfp.src = avatar;
         userPfp.alt = "Profile Picture";
         userPfp.style = "border-radius: 50%; object-fit: cover; transition: none;"
+        pfpBtn.alt = "Profile Picture";
+        pfpBtn.href = "";
     }
 }
 
