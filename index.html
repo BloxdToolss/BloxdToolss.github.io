@@ -50,6 +50,7 @@
         background-color: var(--card-bg);
         border-bottom: 1px solid var(--border-color);
         padding: 3px 20px;
+        z-index: 9998;
       }
 
       .header-left {
@@ -129,7 +130,7 @@
       a {
         color: var(--text-main);
         text-decoration: none;
-        font-weight: 700;
+        font-weight: 500;
         font-size: var(--current-size, 16px);
         transition: color 0.2s ease, font-size 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       }
@@ -236,6 +237,45 @@
       .gap {
         width: 12px;
       }
+
+      .profile-dropdown-menu {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px; /* Smooth rounded custom styling */
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 160px;
+        height: 310px;
+        position: absolute;
+        z-index: 9999;
+        right: 25px;
+        top: 55px;
+        gap: 10px;
+        align-items: left;
+        padding: 10px;
+      }
+      
+      .dropdown-user-info {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        gap: 8px;
+        font-size: 10px;
+        line-height: -5px;
+      }
+
+      .profile-dropdown-menu a {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        gap: 4px;
+      }
+
+      .user-display-name.dropdown-user-meta {
+        font-size: 20px;
+        font-weight: 500;
+      }
     </style>
   </head>
   <body>
@@ -265,6 +305,56 @@
           <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
         </a>
       </div>
+    </div>
+
+    <!-- prob temp menu -->
+    <div id="pfpDropdownMenu" class="profile-dropdown-menu">
+      <!-- User Summary Info Block -->
+      <div class="dropdown-user-info">
+        <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Profile Picture" />
+        <div class="dropdown-user-meta">
+          <span class="user-display-name dropdown-user-meta"></span>
+          <br>
+          <span class="user-email dropdown-user-meta"></span>
+        </div>
+      </div>
+      
+      <div class="dropdown-divider"></div>
+
+      <!-- Links Grid Options -->
+      <a href="/profile" class="dropdown-item">
+        <img src="img/icons/user.svg" style="width: 20px;"> profile
+      </a>
+      <a href="/edit-profile" class="dropdown-item">
+        <img src="img/icons/refresh.svg" style="width: 20px;"> edit profile
+      </a>
+
+      <div class="dropdown-divider"></div>    
+
+      <a href="/settings" class="dropdown-item">
+        <span class="icon">⚙️</span> settings
+      </a>
+      <a href="/themes" class="dropdown-item beta-item">
+        <span class="icon">🎨</span> themes <span class="beta-badge">BETA</span>
+      </a>
+      <a href="https://discord.com" class="dropdown-item" target="_blank">
+        <img src="img/discord-logo.svg" style="width: 20px;"> discord
+      </a>
+      
+      <div class="dropdown-divider"></div>
+
+      <a href="/terms" class="dropdown-item">
+        <span class="icon">📄</span> terms of service
+      </a>
+      <a href="/privacy" class="dropdown-item">
+        <span class="icon">🔒</span> privacy policy
+      </a>
+      
+      <div class="dropdown-divider"></div>
+
+      <a href="/logout" class="dropdown-item logout-btn">
+        <span class="icon">🚪</span> logout
+      </a>
     </div>
 
     <!-- Main Grid Content Area -->
@@ -350,6 +440,8 @@ async function loadProfile() {
 
     const userPfp = document.querySelector(".nav-icon.user-pfp");
     const pfpBtn = document.querySelector(".nav-btn.user-pfp");
+    const userEmail = document.querySelector('.user-email');
+    const userDisplayName = document.querySelector('.user-display-name');
 
     if (avatar) {
         userPfp.src = avatar;
@@ -357,6 +449,8 @@ async function loadProfile() {
         userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
         pfpBtn.title = "";
         pfpBtn.href = "";
+        user-display-name.textContent = userDisplayName;
+        user-email.textContent = userEmail;
     }
 }
 
