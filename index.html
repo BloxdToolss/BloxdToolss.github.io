@@ -331,27 +331,36 @@
   card.style.cursor = 'pointer';
 });
     </script>
-    <script>
-      async function loadProfile() {
-      const { data } = await supabaseClient.auth.getUser();
+    
+    <!-- load backend -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-      const user = data.user;
+<script>
+const supabaseClient = supabase.createClient(
+    "https://teqlwaiasfhlptolmyii.supabase.co",
+    "sb_publishable_E_2OtvS_u4YIJSqGXSUMzQ_b7Jy3mvO"
+);
 
-      if (!user) return;
+async function loadProfile() {
+    const { data } = await supabaseClient.auth.getUser();
 
-      const avatar =
-          user.user_metadata.avatar_url ||
-          user.user_metadata.picture;
+    const user = data.user;
 
-      const userPfp = document.querySelector(".nav-icon.user-pfp");
+    if (!user) return;
 
-      if (avatar) {
-          userPfp.src = avatar;
-          userPfp.alt = "Profile Picture";
-      }
-  }
+    const avatar =
+        user.user_metadata.avatar_url ||
+        user.user_metadata.picture;
 
-  loadProfile();
-    </script>
+    const userPfp = document.querySelector(".nav-icon.user-pfp");
+
+    if (avatar) {
+        userPfp.src = avatar;
+        userPfp.alt = "Profile Picture";
+    }
+}
+
+loadProfile();
+</script>
   </body>
 </html>
