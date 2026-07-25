@@ -1,0 +1,13 @@
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const supabaseClient = supabase.createClient(
+    "https://teqlwaiasfhlptolmyii.supabase.co",
+    "sb_publishable_E_2OtvS_u4YIJSqGXSUMzQ_b7Jy3mvO"
+);
+
+async function handleLogout() {
+  const { error } = await supabaseClient.auth.signOut()
+  window.location.href = '/';
+}
+</script>
