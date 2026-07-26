@@ -447,8 +447,7 @@ async function loadProfile() {
     const userEmail = document.querySelector('.userEmail');
     const pfpMenu = document.querySelector('#pfpDropdownMenu');
     const profileBtn = document.querySelector('.profilebtn.dropdown-item')
-    const userDisplayName = user.user_metadata.full_name;
-    const userEmail = user.email;
+    const username = user.user_metadata.full_name;
 
     if (avatar) {
             userPfp.src = avatar;
@@ -458,11 +457,11 @@ async function loadProfile() {
             pfpBtn.title = "";
             pfpBtn.href = "";
             pfpMenu.style.display = "flex";
-            profileBtn.href = "/user/" + userDisplayName + "/"
+            profileBtn.href = "/user/" + username + "/"
         
     }
-        userDisplayName.textContent = userDisplayName;
-        userEmail.textContent = userEmail;
+        userDisplayName.textContent = user.user_metadata.full_name;
+        userEmail.textContent = user.email;
 }
 
 loadProfile();
