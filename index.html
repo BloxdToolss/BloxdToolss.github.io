@@ -446,7 +446,8 @@ async function loadProfile() {
     const userDisplayName = document.querySelector('.userDisplayName');
     const userEmail = document.querySelector('.userEmail');
     const pfpMenu = document.querySelector('#pfpDropdownMenu');
-    const profileBtn = document.querySelector('.profilebtn.dropdown-item')
+    const profileBtn = document.querySelector('.profilebtn.dropdown-item');
+    const username = user.user_metadata.full_name;
 
     if (avatar) {
             userPfp.src = avatar;
@@ -456,7 +457,7 @@ async function loadProfile() {
             pfpBtn.title = "";
             pfpBtn.href = "";
             pfpMenu.style.display = "flex";
-            profileBtn.href = `/user/hi/`
+            profileBtn.href = `/user/hi/`;
         
     }
         userDisplayName.textContent = user.user_metadata.full_name;
