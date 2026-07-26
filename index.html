@@ -311,7 +311,7 @@
     <div id="pfpDropdownMenu" class="profile-dropdown-menu">
       <!-- User Summary Info Block -->
       <div class="dropdown-user-info">
-        <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Profile Picture" />
+        <img src="img/icons/user.svg" class="drop-menu user-pfp" alt="Profile Picture" />
         <div class="dropdown-user-meta">
           <span class="userDisplayName dropdown-user-meta"></span>
           <br>
@@ -438,21 +438,21 @@ async function loadProfile() {
         user.user_metadata.avatar_url ||
         user.user_metadata.picture;
 
-    const userPfp = document.querySelectorAll(".nav-icon.user-pfp");
+    const userPfp = document.querySelector(".nav-icon.user-pfp");
+    const userMenuPfp = document.querySelector(".drop-menu.user-pfp");
     const pfpBtn = document.querySelector(".nav-btn.user-pfp");
     const userDisplayName = document.querySelector('.userDisplayName');
     const userEmail = document.querySelector('.userEmail');
     const pfpMenu = document.querySelector('#pfpDropdownMenu');
 
     if (avatar) {
-        userPfp.forEach(pfp => {
             userPfp.src = avatar;
             userPfp.alt = "";
             userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
+            userMenuPfp.src = avatar;
             pfpBtn.title = "";
             pfpBtn.href = "";
             pfpMenu.style.display = "flex";
-        });
         
     }
         userDisplayName.textContent = user.user_metadata.full_name;
