@@ -352,7 +352,7 @@
       
       <div class="dropdown-divider"></div>
 
-      <a href="/logout" class="dropdown-item logout-btn">
+      <a href="/" onclick="handleLogout(event)" class="dropdown-item logout-btn">
         <img src="img/icons/user-logout.svg" style="width: 20px;"> logout
       </a>
     </div>
@@ -458,6 +458,13 @@ async function loadProfile() {
 }
 
 loadProfile();
+
+// logout
+async function handleLogout(event) {
+  if (event) event.preventDefault(); 
+  const { error } = await supabaseClient.auth.signOut()
+  window.location.href = '/';
+}
 </script>
   </body>
 </html>
