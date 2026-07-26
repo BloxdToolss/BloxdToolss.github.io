@@ -444,11 +444,13 @@ async function loadProfile() {
     const userEmail = document.querySelector('.userEmail');
 
     if (avatar) {
-        userPfp.src = avatar;
-        userPfp.alt = "";
-        userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
-        pfpBtn.title = "";
-        pfpBtn.href = "";
+        userPfp.forEach(pfp => {
+            userPfp.src = avatar;
+            userPfp.alt = "";
+            userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
+            pfpBtn.title = "";
+            pfpBtn.href = "";
+        });
         
     }
         userDisplayName.textContent = user.user_metadata.full_name;
