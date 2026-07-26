@@ -246,7 +246,7 @@
         display: none;
         flex-direction: column;
         width: 160px;
-        height: 310px;
+        height: 338px;
         position: absolute;
         z-index: 9999;
         right: 25px;
@@ -297,14 +297,6 @@
         </div>
       </div>
       <div class="header-right">
-        <div class="socials">
-        <a href="https://discord.com/invite/C2TVxDSep3" class="social-link" target="_blank" rel="noopener noreferrer" title="Join our Discord">
-          <img src="img/discord-logo.svg" class="social-icon" alt="Discord" />
-        </a>
-        <a href="https://github.com/BloxdToolss/" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow on Github">
-          <img src="img/github-logo.svg" class="social-icon" alt="Github" />
-        </a>
-        </div>
         
         <div class="gap"></div>
 
@@ -329,7 +321,7 @@
       <div class="dropdown-divider"></div>
 
       <!-- Links Grid Options -->
-      <a href="/profile" class="dropdown-item">
+      <a href="/user/" class="userpfpbtn dropdown-item">
         <img src="img/icons/user.svg" style="width: 20px;"> profile
       </a>
       <a href="/edit-profile" class="dropdown-item">
@@ -344,13 +336,16 @@
       <a href="/themes" class="dropdown-item beta-item">
         <img src="img/icons/paint.svg" style="width: 20px;"> themes <span class="beta-badge">BETA</span>
       </a>
-      <a href="https://discord.com" class="dropdown-item" target="_blank">
+      <a href="https://discord.com/invite/C2TVxDSep3" class="dropdown-item" target="_blank">
         <img src="img/discord-logo.svg" style="width: 20px; filter: brightness(0%);"> discord
+      </a>
+      <a href="https://github.com/BloxdToolss/" class="dropdown-item" target="_blank">
+        <img src="img/github-logo.svg" style="width: 20px; filter: brightness(0%);"> github
       </a>
       
       <div class="dropdown-divider"></div>
 
-      <a href="/terms" class="dropdown-item">
+      <a href="/tos" class="dropdown-item">
         <img src="img/icons/terms-info.svg" style="width: 20px;"> terms of service
       </a>
       <a href="/privacy" class="dropdown-item">
@@ -451,6 +446,8 @@ async function loadProfile() {
     const userDisplayName = document.querySelector('.userDisplayName');
     const userEmail = document.querySelector('.userEmail');
     const pfpMenu = document.querySelector('#pfpDropdownMenu');
+    const profileBtn = document.querySelector('.profilebtn.dropdown-item');
+    const username = user.user_metadata.full_name;
 
     if (avatar) {
             userPfp.src = avatar;
@@ -460,6 +457,7 @@ async function loadProfile() {
             pfpBtn.title = "";
             pfpBtn.href = "";
             pfpMenu.style.display = "flex";
+            profileBtn.href = `/user/${username}/`;
         
     }
         userDisplayName.textContent = user.user_metadata.full_name;
