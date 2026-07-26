@@ -243,7 +243,7 @@
         border: 1px solid var(--border-color);
         border-radius: 16px; /* Smooth rounded custom styling */
         overflow: hidden;
-        display: flex;
+        display: none;
         flex-direction: column;
         width: 160px;
         height: 310px;
@@ -442,6 +442,7 @@ async function loadProfile() {
     const pfpBtn = document.querySelector(".nav-btn.user-pfp");
     const userDisplayName = document.querySelector('.userDisplayName');
     const userEmail = document.querySelector('.userEmail');
+    const pfpMenu = document.querySelector('#pfpDropdownMenu');
 
     if (avatar) {
         userPfp.forEach(pfp => {
@@ -450,6 +451,7 @@ async function loadProfile() {
             userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
             pfpBtn.title = "";
             pfpBtn.href = "";
+            pfpMenu.style.display = "flex";
         });
         
     }
