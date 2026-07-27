@@ -459,7 +459,7 @@ async function loadProfile() {
             userMenuPfp.src = avatar;
             pfpBtn.title = "";
             pfpBtn.href = "";
-            pfpBtn.classList.add('logged-in');
+            pfpBtn.classList.add('loggedin');
             profileBtn.href = `/user/${usersUsername}/`;
         
     }
@@ -485,12 +485,10 @@ async function handleLogout(event) {
 <script>
         // dropdown toggle
         const pfpBtn = document.querySelector(".nav-btn.user-pfp");
-        const pfpMenu = document.querySelector('#pfpDropdownMenu');
-        const avatar =
-        user.user_metadata.avatar_url ||
+        const pfpMenu = document.querySelector('#pfpDropdownMenu'); ||
         user.user_metadata.picture;
 
-        if (avatar) {
+        if (.nav-btn.user-pfp.loggedin) {
           pfpBtn.addEventListener('click', (event) => {
               // Stops the browser from trying to navigate or refresh when clicked
                 event.preventDefault(); 
