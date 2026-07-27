@@ -448,7 +448,6 @@ async function loadProfile() {
     const pfpBtn = document.querySelector(".nav-btn.user-pfp");
     const userDisplayName = document.querySelector('.userDisplayName');
     const userEmail = document.querySelector('.userEmail');
-    const pfpMenu = document.querySelector('#pfpDropdownMenu');
     const profileBtn = document.querySelector('.profilebtn.dropdown-item');
     const usernameElement = document.querySelector('.username');
     const usersUsername = user.user_metadata.full_name;
@@ -461,7 +460,6 @@ async function loadProfile() {
             pfpBtn.title = "";
             pfpBtn.href = "";
             pfpBtn.classList.add('logged-in');
-            pfpMenu.style.display = "flex";
             profileBtn.href = `/user/${usersUsername}/`;
         
     }
@@ -485,11 +483,11 @@ async function handleLogout(event) {
 }
 </script>
 <script>
-        // Dropdown Toggle Setup
+        // dropdown toggle
         const pfpBtn = document.querySelector(".nav-btn.user-pfp");
         const pfpMenu = document.querySelector('#pfpDropdownMenu');
 
-        if (pfpBtn && pfpMenu) {
+        if (avatar) {
           pfpBtn.addEventListener('click', (event) => {
               // Stops the browser from trying to navigate or refresh when clicked
                 event.preventDefault(); 
