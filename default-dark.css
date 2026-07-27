@@ -1,0 +1,275 @@
+      /* Light Dashboard Design Core System Tokens */
+      :root {
+        --bg-color: #121212; /* Google black */
+        --text-main: #f8f9fa; /* Google off-white */
+        --text-muted: #6f7479; /* Google medium grey */
+        --accent-blue: #3035aa; /* Custom blue hover parameter */
+        --border-color: #4a4c4c; /* Minimal divider line color */
+        --card-bg: #202124; /* Clean black card face */
+      }
+
+      body {
+        font-family: Roboto, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .site-logo {
+        width: 36px;               /* adjust to taste */
+        height: 36px;
+        object-fit: contain;
+        display: block;
+        padding: 0px 0px;
+        border-radius: 10px;
+      }
+
+      /* Clean Top Branding Header Container */
+      .header-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 7px;
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        padding: 3px 20px;
+        z-index: 9998;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .nav-icon {
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        filter: invert(50%) brightness(130%);
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+
+      .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 33px;
+      }
+
+      .nav-btn:hover .nav-icon {
+        --pfpHover: invert(50%) brightness(150%);
+        filter: var(--pfpHover);
+      }
+
+      .socials {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .social-icon {
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 33px;
+      }
+
+      .social-link:hover .social-icon {
+        transform: scale(1.2);
+        filter: brightness(1.2);
+      }
+
+      h1 {
+        font-size: 21px;
+        font-weight: 700;
+        margin: 0;
+        letter-spacing: -0.5px;
+        color: var(--text-main);
+      }
+
+      h3 {
+        font-size: 10.5px;
+        font-weight: 500;
+        margin: 0px 0 0 0;
+        color: var(--text-muted);
+      }
+
+      /* Preserving baseline functional link parameters for Javascript scaling */
+      a {
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: var(--current-size, 16px);
+        transition: color 0.2s ease, font-size 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      a:hover {
+        color: var(--accent-blue);
+        font-size: calc(var(--current-size, 16px) + 2px); 
+      }
+
+      /* Main Dynamic Grid Content Container */
+      .container-lg.px-3.my-5.markdown-body {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 40px;
+        box-sizing: border-box;
+      }
+
+      /* Grid Wrapper to support infinite item addition cleanly */
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 20px;
+      }
+
+      /* Dashboard Tool Card Framework with sketch curved edges */
+      .tool-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px; /* Smooth rounded custom styling */
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+
+      .tool-card:hover {
+        border-color: var(--accent-blue);
+        box-shadow: 0 4px 12px rgba(112, 172, 255, 0.15);
+        transform: translateY(-2px);
+      }
+
+      /* Embedded Thumbnail Frame styling */
+      .thumbnail-container {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        background-color: #f1f3f4;
+        border-bottom: 1px solid var(--border-color);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .thumbnail-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Lower Metadata Typography Block */
+      .card-content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .tool-title-link {
+        font-size: 16px;
+        line-height: 1.4;
+        display: block;
+      }
+
+      .metadata-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      .metadata-author-link {
+        color: var(--text-muted);
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .website-author-link {
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      .metadata-author-link:hover {
+        color: var(--accent-blue);
+        font-size: 14.5px; /* Isolated tracking so badge doesn't distort row layout */
+      }
+
+      .bullet-separator {
+        color: var(--border-color);
+        user-select: none;
+      }
+
+      .gap {
+        width: 12px;
+      }
+
+      .profile-dropdown-menu {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px; /* Smooth rounded custom styling */
+        overflow: hidden;
+        display: none;
+        flex-direction: column;
+        width: 160px;
+        height: 338px;
+        position: absolute;
+        z-index: 9999;
+        right: 25px;
+        top: 55px;
+        gap: 10px;
+        align-items: left;
+        padding: 10px;
+      }
+      
+      .dropdown-user-info {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        gap: 8px;
+        font-size: 10px;
+        line-height: -5px;
+      }
+
+      .profile-dropdown-menu a {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        gap: 4px;
+      }
+
+      .userDisplayName.dropdown-user-meta {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .drop-menu.user-pfp {
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        border-radius: 5px;
+      }
+
+      .pfp-dropdown-open {
+        display: flex;
+      }
