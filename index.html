@@ -486,6 +486,9 @@ async function handleLogout(event) {
         // dropdown toggle
         const pfpBtn = document.querySelector(".nav-btn.user-pfp");
         const pfpMenu = document.querySelector('#pfpDropdownMenu');
+        const avatar =
+        user.user_metadata.avatar_url ||
+        user.user_metadata.picture;
 
         if (avatar) {
           pfpBtn.addEventListener('click', (event) => {
