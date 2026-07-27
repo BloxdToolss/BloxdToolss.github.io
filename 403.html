@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Discord Banner -->
+    <meta property="og:site_name" content="BloxdTools">
+    <meta property="og:title" content="Use free tools for Bloxd.io today! - BloxdTools">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="tools/thumbnails/1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>403 Access Denied - BloxdTools</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <style>
+      /* Light Dashboard Design Core System Tokens */
+      :root {
+        --bg-color: #f8f9fa; /* Google off-white */
+        --text-main: #202124; /* Google black */
+        --text-muted: #5f6368; /* Google medium grey */
+        --accent-blue: #70acff; /* Custom blue hover parameter */
+        --border-color: #dadce0; /* Minimal divider line color */
+        --card-bg: #ffffff; /* Clean white card face */
+      }
+
+      body {
+        font-family: Roboto, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .site-logo {
+        width: 36px;               /* adjust to taste */
+        height: 36px;
+        object-fit: contain;
+        display: block;
+        padding: 0px 0px;
+        border-radius: 10px;
+      }
+
+      /* Clean Top Branding Header Container */
+      .header-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 7px;
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        padding: 3px 20px;
+        z-index: 9998;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .nav-icon {
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+
+      .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 33px;
+      }
+
+      .nav-btn:hover .nav-icon {
+        --pfpHover: invert(50%) brightness(50%);
+        filter: var(--pfpHover);
+      }
+
+      .socials {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .social-icon {
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 33px;
+      }
+
+      .social-link:hover .social-icon {
+        transform: scale(1.2);
+        filter: brightness(1.2);
+      }
+
+      h1 {
+        font-size: 21px;
+        font-weight: 700;
+        margin: 0;
+        letter-spacing: -0.5px;
+        color: var(--text-main);
+      }
+
+      h3 {
+        font-size: 10.5px;
+        font-weight: 500;
+        margin: 0px 0 0 0;
+        color: var(--text-muted);
+      }
+
+      /* Preserving baseline functional link parameters for Javascript scaling */
+      a {
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: var(--current-size, 16px);
+        transition: color 0.2s ease, font-size 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      a:hover {
+        color: var(--accent-blue);
+        font-size: calc(var(--current-size, 16px) + 2px); 
+      }
+
+      /* Main Dynamic Grid Content Container */
+      .container-lg.px-3.my-5.markdown-body {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 40px;
+        box-sizing: border-box;
+      }
+
+      /* Grid Wrapper to support infinite item addition cleanly */
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 20px;
+      }
+
+      /* Dashboard Tool Card Framework with sketch curved edges */
+      .tool-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px; /* Smooth rounded custom styling */
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+
+      .tool-card:hover {
+        border-color: var(--accent-blue);
+        box-shadow: 0 4px 12px rgba(112, 172, 255, 0.15);
+        transform: translateY(-2px);
+      }
+
+      /* Embedded Thumbnail Frame styling */
+      .thumbnail-container {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        background-color: #f1f3f4;
+        border-bottom: 1px solid var(--border-color);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .thumbnail-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Lower Metadata Typography Block */
+      .card-content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .tool-title-link {
+        font-size: 16px;
+        line-height: 1.4;
+        display: block;
+      }
+
+      .metadata-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      .metadata-author-link {
+        color: var(--text-muted);
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .website-author-link {
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      .metadata-author-link:hover {
+        color: var(--accent-blue);
+        font-size: 14.5px; /* Isolated tracking so badge doesn't distort row layout */
+      }
+
+      .bullet-separator {
+        color: var(--border-color);
+        user-select: none;
+      }
+
+      .gap {
+        width: 12px;
+      }
+
+      .profile-dropdown-menu {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px; /* Smooth rounded custom styling */
+        overflow: hidden;
+        display: none;
+        flex-direction: column;
+        width: 160px;
+        height: 310px;
+        position: absolute;
+        z-index: 9999;
+        right: 25px;
+        top: 55px;
+        gap: 10px;
+        align-items: left;
+        padding: 10px;
+      }
+      
+      .dropdown-user-info {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        gap: 8px;
+        font-size: 10px;
+        line-height: -5px;
+      }
+
+      .profile-dropdown-menu a {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        gap: 4px;
+      }
+
+      .userDisplayName.dropdown-user-meta {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .drop-menu.user-pfp {
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        border-radius: 5px;
+      }
+
+      .pfp-dropdown-open {
+        display: flex;
+      }
+      
+      .popup-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px; /* Smooth rounded custom styling */
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 450px;
+        overflow-wrap: break-word;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+
+      .popup-card:hover {
+        border-color: #eeeeee;
+        box-shadow: 0 4px 12px rgba(112, 172, 255, 0.15);
+        transform: translate(-50%, -50%) translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Header Branding Frame -->
+    <div class="header-section">
+      <div class="header-left">
+        <img src="/favicon.svg" class="site-logo" />
+        <div class="site-branding">
+          <h1>BloxdTools</h1>
+          <h3>by <a href="https://bloxd.io/player/_Crafty" class="website-author-link" style="--current-size: 10.5px;">Crafty</a></h3>
+        </div>
+      </div>
+      <div class="header-right">
+
+        <div class="gap"></div>
+
+        <a href="/login" class="nav-btn user-pfp" rel="noopener noreferrer" title="Login">
+          <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
+        </a>
+      </div>
+    </div>
+
+    <!-- pfp dropdown menu -->
+    <div id="pfpDropdownMenu" class="profile-dropdown-menu">
+      <!-- user info -->
+      <div class="dropdown-user-info">
+        <img src="img/icons/user.svg" class="drop-menu user-pfp" alt="Profile Picture" />
+        <div class="dropdown-user-meta">
+          <span class="userDisplayName dropdown-user-meta"></span>
+          <br>
+          <span class="username dropdown-user-meta"></span>
+        </div>
+      </div>
+      
+      <div class="dropdown-divider"></div>
+
+      <!-- Links Grid Options -->
+      <a href="/user/" class="profilebtn dropdown-item">
+        <img src="img/icons/user.svg" style="width: 20px;"> profile
+      </a>
+      <a href="/edit-profile" class="dropdown-item">
+        <img src="img/icons/user-pen.svg" style="width: 20px;"> edit profile
+      </a>
+
+      <div class="dropdown-divider"></div>    
+
+      <a href="/settings" class="dropdown-item">
+        <img src="img/icons/settings.svg" style="width: 20px;"> settings
+      </a>
+      <a href="/themes" class="dropdown-item beta-item">
+        <img src="img/icons/paint.svg" style="width: 20px;"> themes <span class="beta-badge">BETA</span>
+      </a>
+      <a href="https://discord.com/invite/C2TVxDSep3" class="dropdown-item" target="_blank">
+        <img src="img/discord-logo.svg" style="width: 20px; filter: brightness(0%);"> discord
+      </a>
+      <a href="https://github.com/BloxdToolss/" class="dropdown-item" target="_blank">
+        <img src="img/github-logo.svg" style="width: 20px; filter: brightness(0%);"> github
+      </a>
+      
+      <div class="dropdown-divider"></div>
+
+      <a href="/tos" class="dropdown-item">
+        <img src="img/icons/terms-info.svg" style="width: 20px;"> terms of service
+      </a>
+      <a href="/privacy" class="dropdown-item">
+        <img src="img/icons/user-lock.svg" style="width: 20px;"> privacy policy
+      </a>
+      
+      <div class="dropdown-divider"></div>
+
+      <a href="/" onclick="handleLogout(event)" class="dropdown-item logout-btn">
+        <img src="img/icons/user-logout.svg" style="width: 20px;"> logout
+      </a>
+    </div>
+
+    <div class="popup-card">
+        <h1 style="font-size: 32px;">Oops,</h1>
+        <p>Looks like you shouldn't be here.</p>
+    <a href="/" style="
+    display: inline-block;
+    text-align: center;
+    background: var(--accent-blue);
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: opacity 0.2s ease;
+  " onmouseover="this.style.opacity='0.9'" 
+     onmouseout="this.style.opacity='1'">
+    Go Home
+  </a>
+    </div>
+      
+    <script>
+      document.querySelectorAll('.tool-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const link = card.querySelector('a');
+    if (link) window.location.href = link.href;
+  });
+  card.style.cursor = 'pointer';
+});
+    </script>
+    
+    <!-- load backend -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabaseClient = supabase.createClient(
+    "https://teqlwaiasfhlptolmyii.supabase.co",
+    "sb_publishable_E_2OtvS_u4YIJSqGXSUMzQ_b7Jy3mvO"
+);
+
+async function loadProfile() {
+    const { data } = await supabaseClient.auth.getUser();
+
+    const user = data.user;
+
+    if (!user) return;
+
+    const avatar =
+        user.user_metadata.avatar_url ||
+        user.user_metadata.picture;
+
+    const userPfp = document.querySelector(".nav-icon.user-pfp");
+    const userMenuPfp = document.querySelector(".drop-menu.user-pfp");
+    const pfpBtn = document.querySelector(".nav-btn.user-pfp");
+    const userDisplayName = document.querySelector('.userDisplayName');
+    const userEmail = document.querySelector('.userEmail');
+    const profileBtn = document.querySelector('.profilebtn.dropdown-item');
+    const usernameElement = document.querySelector('.username');
+    const usersUsername = user.user_metadata.full_name;
+
+    if (avatar) {
+            userPfp.src = avatar;
+            userPfp.alt = "";
+            userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
+            userMenuPfp.src = avatar;
+            pfpBtn.title = "";
+            pfpBtn.href = "";
+            pfpBtn.classList.add('loggedin');
+            profileBtn.href = `/user/${usersUsername}/`;
+        
+    }
+        const meta = user.user_metadata;
+        userDisplayName.textContent = meta.custom_claims?.global_name || 
+                                      meta.full_name;
+
+        usernameElement.textContent = meta.user_name || 
+                                      meta.full_name;
+
+        userEmail.textContent = user.email;
+}
+
+loadProfile();
+
+// logout
+async function handleLogout(event) {
+  if (event) event.preventDefault(); 
+  const { error } = await supabaseClient.auth.signOut()
+  window.location.href = '/';
+}
+</script>
+<script>
+        // dropdown toggle
+        const pfpBtn = document.querySelector(".nav-btn.user-pfp");
+        const pfpMenu = document.querySelector('#pfpDropdownMenu');
+
+        pfpBtn.addEventListener('click', (event) => {
+            if (pfpBtn.classList.contains('loggedin')) {
+              // Stops the browser from trying to navigate or refresh when clicked
+                event.preventDefault(); 
+        
+                // Automatically adds 'pfp-dropdown-open' if it's missing, or removes it if it's there
+               pfpMenu.classList.toggle('pfp-dropdown-open');
+            }
+         });
+    </script>
+  </body>
+</html>
