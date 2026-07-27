@@ -243,7 +243,7 @@
         border: 1px solid var(--border-color);
         border-radius: 16px; /* Smooth rounded custom styling */
         overflow: hidden;
-        display: flex;
+        display: none;
         flex-direction: column;
         width: 160px;
         height: 338px;
@@ -285,7 +285,7 @@
       }
 
       .pfp-dropdown-closed {
-        display: none;
+        display: flex;
       }
     </style>
   </head>
@@ -495,7 +495,7 @@ async function handleLogout(event) {
                 event.preventDefault(); 
         
                 // Automatically adds 'pfp-dropdown-open' if it's missing, or removes it if it's there
-               pfpMenu.classList.toggle('pfp-dropdown-closed');
+               pfpMenu.classList.toggle('pfp-dropdown-open');
          });
         }
     </script>
