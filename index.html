@@ -305,7 +305,7 @@
         <div class="gap"></div>
 
         <a href="/login" class="nav-btn user-pfp" rel="noopener noreferrer" title="Login">
-          <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
+          <img src="img/icons/user.svg" id="pfpDropdownMenu" class="nav-icon user-pfp" alt="Login" />
         </a>
       </div>
     </div>
@@ -470,7 +470,7 @@ async function loadProfile() {
                                       meta.full_name;
 
         usernameElement.textContent = meta.user_name || 
-                               meta.full_name;
+                                      meta.full_name;
 
         userEmail.textContent = user.email;
 }
@@ -486,7 +486,7 @@ async function handleLogout(event) {
 </script>
 <script>
         // Dropdown Toggle Setup
-        const pfpBtn = document.querySelector(".nav-btn.user-pfp.logged-in");
+        const pfpBtn = document.querySelector(".nav-btn.user-pfp");
         const pfpMenu = document.querySelector('#pfpDropdownMenu');
 
         if (pfpBtn && pfpMenu) {
