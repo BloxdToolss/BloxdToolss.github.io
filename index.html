@@ -488,7 +488,7 @@ async function handleLogout(event) {
         const pfpMenu = document.querySelector('#pfpDropdownMenu'); ||
         user.user_metadata.picture;
 
-        if (.nav-btn.user-pfp.loggedin) {
+        if (pfpBtn.classList.contains('loggedin')) {
           pfpBtn.addEventListener('click', (event) => {
               // Stops the browser from trying to navigate or refresh when clicked
                 event.preventDefault(); 
