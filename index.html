@@ -225,7 +225,7 @@ async function handleLogout(event) {
     <script>
     const themeLink = document.getElementById("theme");
 
-    const savedTheme = localStorage.getItem("theme") || "dark";
+    const savedTheme = localStorage.getItem("theme") || "default";
 
     themeLink.href = `/${savedTheme}.css`;
     </script>
