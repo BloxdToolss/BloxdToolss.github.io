@@ -222,5 +222,12 @@ async function handleLogout(event) {
             }
          });
     </script>
+    <script>
+    const themeLink = document.getElementById("theme");
+
+    const savedTheme = localStorage.getItem("theme") || "dark";
+
+    themeLink.href = `styles/${savedTheme}.css`;
+    </script>
   </body>
 </html>
