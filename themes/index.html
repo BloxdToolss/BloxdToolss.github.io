@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Themes - BloxdTools</title>
-    <link rel="stylesheet" href="/default.css">
+    <link id="theme" rel="stylesheet" href="/default.css">
     <style>
         .settings {
             max-width: 800px;
@@ -235,7 +235,7 @@ const themeLink = document.getElementById("theme");
 const cards = document.querySelectorAll(".theme");
 
 function setTheme(name) {
-    themeLink.href = `${name}.css`;
+    themeLink.href = `/${name}.css`;
     localStorage.setItem("theme", name);
 
     cards.forEach(card =>
@@ -243,7 +243,7 @@ function setTheme(name) {
     );
 }
 
-const savedTheme = localStorage.getItem("theme") || "dark";
+const savedTheme = localStorage.getItem("theme") || "default";
 setTheme(savedTheme);
 
 cards.forEach(card => {
