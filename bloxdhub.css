@@ -363,6 +363,10 @@
 
       .nav-icon.user-pfp.loggedin {
         display: flex;
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        transition: transform 0.2s ease, filter 0.2s ease;
       }
 
       ::-webkit-scrollbar {
