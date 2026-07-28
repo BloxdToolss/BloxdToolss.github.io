@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themes - BloxdTools</title>
+    <link rel="stylesheet" href="/default.css">
+    <style>
+        .settings {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .theme {
+            border: 2px solid #444;
+            border-radius: 12px;
+            padding: 16px;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .theme:hover {
+            transform: translateY(-3px);
+            border-color: #777;
+        }
+
+        .theme.selected {
+            border-color: dodgerblue;
+        }
+
+        .preview {
+            height: 90px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .dark  { background:#1d1d1d; }
+        .light { background:#ececec; }
+        .bloxdhub { background:linear-gradient(135deg,#00b4d8,#0077b6); }
+
+        h3 {
+            margin: 0 0 6px;
+        }
+
+        p {
+            margin: 0;
+            opacity: .8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Branding Frame -->
+    <div class="header-section">
+      <div class="header-left">
+        <img src="favicon.svg" class="site-logo" />
+        <div class="site-branding">
+          <h1>BloxdTools</h1>
+          <h3>by <a href="https://bloxd.io/player/_Crafty" class="website-author-link" style="--current-size: 10.5px;">Crafty</a></h3>
+        </div>
+      </div>
+      <div class="header-right">
+        
+        <div class="gap"></div>
+
+        <a href="/login" class="nav-btn user-pfp" rel="noopener noreferrer" title="Login">
+          <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
+        </a>
+      </div>
+    </div>
+
+    <!-- pfp dropdown menu -->
+    <div id="pfpDropdownMenu" class="profile-dropdown-menu">
+      <!-- user info -->
+      <div class="dropdown-user-info">
+        <img src="img/icons/user.svg" class="drop-menu user-pfp" alt="Profile Picture" />
+        <div class="dropdown-user-meta">
+          <span class="userDisplayName dropdown-user-meta"></span>
+          <br>
+          <span class="username dropdown-user-meta"></span>
+        </div>
+      </div>
+      
+      <div class="dropdown-divider"></div>
+
+      <!-- Links Grid Options -->
+      <a href="/user/" class="profilebtn dropdown-item">
+        <img src="img/icons/user.svg" style="width: 20px;"> profile
+      </a>
+      <a href="/edit-profile" class="dropdown-item">
+        <img src="img/icons/user-pen.svg" style="width: 20px;"> edit profile
+      </a>
+
+      <div class="dropdown-divider"></div>    
+
+      <a href="/settings" class="dropdown-item">
+        <img src="img/icons/settings.svg" style="width: 20px;"> settings
+      </a>
+      <a href="/themes" class="dropdown-item beta-item">
+        <img src="img/icons/paint.svg" style="width: 20px;"> themes <span class="beta-badge">BETA</span>
+      </a>
+      <a href="https://discord.com/invite/C2TVxDSep3" class="dropdown-item" target="_blank">
+        <img src="img/discord-logo.svg" style="width: 20px; filter: brightness(0%);"> discord
+      </a>
+      <a href="https://github.com/BloxdToolss/" class="dropdown-item" target="_blank">
+        <img src="img/github-logo.svg" style="width: 20px; filter: brightness(0%);"> github
+      </a>
+      
+      <div class="dropdown-divider"></div>
+
+      <a href="/tos" class="dropdown-item">
+        <img src="img/icons/terms-info.svg" style="width: 20px;"> terms of service
+      </a>
+      <a href="/privacy" class="dropdown-item">
+        <img src="img/icons/user-lock.svg" style="width: 20px;"> privacy policy
+      </a>
+      
+      <div class="dropdown-divider"></div>
+
+      <a href="/" onclick="handleLogout(event)" class="dropdown-item logout-btn">
+        <img src="img/icons/user-logout.svg" style="width: 20px;"> logout
+      </a>
+    </div>
+
+<div class="settings">
+    <h1>🎨 Themes</h1>
+    <p>Select a theme for BloxdTools.</p>
+
+    <div class="theme-grid">
+
+        <div class="theme" data-theme="default">
+            <div class="preview light"></div>
+            <h3>☀️ Light</h3>
+            <p>Default light appearance.</p>
+        </div>
+
+        <div class="theme" data-theme="default-dark">
+            <div class="preview dark"></div>
+            <h3>🌙 Dark</h3>
+            <p>Dark and sleek.</p>
+        </div>
+
+        <div class="theme" data-theme="bloxdhub">
+            <div class="preview bloxdhub"></div>
+            <h3>🌊 BloxdHub</h3>
+            <p>BloxdHub's interface.</p>
+        </div>
+
+    </div>
+</div>
+    
+    <!-- load backend -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabaseClient = supabase.createClient(
+    "https://teqlwaiasfhlptolmyii.supabase.co",
+    "sb_publishable_E_2OtvS_u4YIJSqGXSUMzQ_b7Jy3mvO"
+);
+
+async function loadProfile() {
+    const { data } = await supabaseClient.auth.getUser();
+
+    const user = data.user;
+
+    if (!user) return;
+
+    const avatar =
+        user.user_metadata.avatar_url ||
+        user.user_metadata.picture;
+
+    const userPfp = document.querySelector(".nav-icon.user-pfp");
+    const userMenuPfp = document.querySelector(".drop-menu.user-pfp");
+    const pfpBtn = document.querySelector(".nav-btn.user-pfp");
+    const userDisplayName = document.querySelector('.userDisplayName');
+    const userEmail = document.querySelector('.userEmail');
+    const profileBtn = document.querySelector('.profilebtn.dropdown-item');
+    const usernameElement = document.querySelector('.username');
+    const usersUsername = user.user_metadata.full_name;
+
+    if (avatar) {
+            userPfp.src = avatar;
+            userPfp.alt = "";
+            userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
+            userMenuPfp.src = avatar;
+            pfpBtn.title = "";
+            pfpBtn.href = "";
+            pfpBtn.classList.add('loggedin');
+            profileBtn.href = `/user/${usersUsername}/`;
+        
+    }
+        const meta = user.user_metadata;
+        userDisplayName.textContent = meta.custom_claims?.global_name || 
+                                      meta.full_name;
+
+        usernameElement.textContent = meta.user_name || 
+                                      meta.full_name;
+
+        userEmail.textContent = user.email;
+}
+
+loadProfile();
+
+// logout
+async function handleLogout(event) {
+  if (event) event.preventDefault(); 
+  const { error } = await supabaseClient.auth.signOut()
+  window.location.href = '/';
+}
+</script>
+<script>
+        // dropdown toggle
+        const pfpBtn = document.querySelector(".nav-btn.user-pfp");
+        const pfpMenu = document.querySelector('#pfpDropdownMenu');
+
+        pfpBtn.addEventListener('click', (event) => {
+            if (pfpBtn.classList.contains('loggedin')) {
+              // Stops the browser from trying to navigate or refresh when clicked
+                event.preventDefault(); 
+        
+                // Automatically adds 'pfp-dropdown-open' if it's missing, or removes it if it's there
+               pfpMenu.classList.toggle('pfp-dropdown-open');
+            }
+         });
+    </script>
+<script>
+const themeLink = document.getElementById("theme");
+const cards = document.querySelectorAll(".theme");
+
+function setTheme(name) {
+    themeLink.href = `${name}.css`;
+    localStorage.setItem("theme", name);
+
+    cards.forEach(card =>
+        card.classList.toggle("selected", card.dataset.theme === name)
+    );
+}
+
+const savedTheme = localStorage.getItem("theme") || "dark";
+setTheme(savedTheme);
+
+cards.forEach(card => {
+    card.onclick = () => setTheme(card.dataset.theme);
+});
+</script>
+
+</body>
+</html>
