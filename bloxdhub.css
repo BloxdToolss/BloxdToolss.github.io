@@ -296,7 +296,7 @@
         overflow: hidden;
         display: none;
         flex-direction: column;
-        width: 280px;
+        width: 320px;
         max-width: calc(100vw - 32px);
         position: fixed;
         z-index: 9999;
@@ -314,9 +314,11 @@
       .dropdown-user-info {
         display: flex;
         flex-direction: row; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         align-items: center; 
-        gap: 8px;
-        font-size: 13px;
+        gap: 12px;
+        padding: 20px;
+        font-size: 14px;
         line-height: -5px;
         color: rgba(255, 255, 255, 0.5);
         margin: 0;
@@ -329,12 +331,12 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        padding: 12px;
+        padding: 16px;
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.2s ease;
         color: rgba(255, 255, 255, 0.8);
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 500;
         background: none;
         border: none;
@@ -353,7 +355,7 @@
       }
 
       .userDisplayName.dropdown-user-meta {
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 600;
         color: white;
         margin: 0 0 4px 0;
@@ -401,6 +403,12 @@
         height: 33px;
         object-fit: contain;
         transition: transform 0.2s ease, filter 0.2s ease;
+      }
+
+      .dropdown-divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 4px 0;
       }
 
       ::-webkit-scrollbar {
