@@ -314,7 +314,6 @@
       .dropdown-user-info {
         display: flex;
         flex-direction: row; 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         align-items: center; 
         gap: 12px;
         padding: 20px;
