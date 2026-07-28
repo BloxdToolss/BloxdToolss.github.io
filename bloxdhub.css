@@ -290,22 +290,22 @@
       }
 
       .profile-dropdown-menu {
-        background: #1a1f2e;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px; /* Smooth rounded custom styling */
+        background: #252b3d;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px; /* Smooth rounded custom styling */
         overflow: hidden;
         display: none;
         flex-direction: column;
         width: 160px;
         max-width: calc(100vw - 32px);
-        position: absolute;
+        position: fixed;
         z-index: 9999;
-        right: 0;
-        top: 100%;
+        right: 16px;
+        top: 80px;
         gap: 10px;
         align-items: left;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-        padding: 4px;
+        padding: 8px;
         transform: translateY(-8px) scale(0.95);
         backdrop-filter: blur(12px);
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -316,21 +316,30 @@
         flex-direction: row; 
         align-items: center; 
         gap: 8px;
-        font-size: 10px;
+        font-size: 13px;
         line-height: -5px;
+        color: rgba(255, 255, 255, 0.5);
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .profile-dropdown-menu a {
         display: flex;
         align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 6px;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 8px;
         cursor: pointer;
         transition: all 0.2s ease;
         color: rgba(255, 255, 255, 0.8);
         font-size: 14px;
         font-weight: 500;
+        background: none;
+        border: none;
+        width: 100%;
+        text-align: left;
       }
 
       .profile-dropdown-menu a:hover {
@@ -344,8 +353,13 @@
       }
 
       .userDisplayName.dropdown-user-meta {
-        font-size: 20px;
-        font-weight: 500;
+        font-size: 15px;
+        font-weight: 600;
+        color: white;
+        margin: 0 0 4px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .drop-menu.user-pfp {
