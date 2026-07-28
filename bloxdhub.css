@@ -290,21 +290,25 @@
       }
 
       .profile-dropdown-menu {
-        background: var(--card-bg);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px; /* Smooth rounded custom styling */
+        background: #1a1f2e;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px; /* Smooth rounded custom styling */
         overflow: hidden;
         display: none;
         flex-direction: column;
         width: 160px;
-        height: 338px;
+        max-width: calc(100vw - 32px);
         position: absolute;
         z-index: 9999;
-        right: 25px;
-        top: 55px;
+        right: 0;
+        top: 100%;
         gap: 10px;
         align-items: left;
-        padding: 10px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        padding: 4px;
+        transform: translateY(-8px) scale(0.95);
+        backdrop-filter: blur(12px);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       }
       
       .dropdown-user-info {
