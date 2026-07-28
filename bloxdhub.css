@@ -361,6 +361,15 @@
         width: 33px;
       }
 
+      .nav-icon.user-pfp.loggedin {
+        background-image: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 33px;
+      }
+
       ::-webkit-scrollbar {
         width: 8px;
       }
