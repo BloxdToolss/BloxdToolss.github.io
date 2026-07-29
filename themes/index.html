@@ -57,6 +57,14 @@
             border-color: dodgerblue;
         }
 
+        .theme.locked {
+            border: 2px solid #222;
+            border-radius: 12px;
+            padding: 16px;
+            cursor: not-allowed;
+            transition: .2s;
+        }
+
         .preview {
             height: 90px;
             border-radius: 8px;
@@ -66,6 +74,7 @@
         .dark  { background:#1d1d1d; }
         .light { background:#ececec; }
         .bloxdhub { background:linear-gradient(135deg,#00b4d8,#0077b6); }
+        .bloxdio { background:linear-gradient(135deg,#006061,#002251); }
 
         p {
             margin: 0;
@@ -169,6 +178,12 @@
             <div class="preview bloxdhub"></div>
             <h3>🌊 BloxdHub</h3>
             <p>BloxdHub's interface.</p>
+        </div>
+
+        <div class="theme locked" data-theme="bloxdio">
+            <div class="preview bloxdio"></div>
+            <h3>🟦 Bloxd.io</h3>
+            <p>Bloxd.io's interface.</p>
         </div>
 
     </div>
