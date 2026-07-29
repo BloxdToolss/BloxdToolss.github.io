@@ -58,11 +58,10 @@
         }
 
         .theme.locked {
-            border: 2px solid #222;
+            border: 2px solid #333;
             border-radius: 12px;
             padding: 16px;
             cursor: not-allowed;
-            pointer-events: none;
             transition: .2s;
         }
 
@@ -266,7 +265,7 @@ async function handleLogout(event) {
     </script>
 <script>
 const themeLink = document.getElementById("theme");
-const cards = document.querySelectorAll(".theme");
+const cards = document.querySelectorAll(".theme:not(.locked)");
 
 function setTheme(name) {
     themeLink.href = `/${name}.css`;
