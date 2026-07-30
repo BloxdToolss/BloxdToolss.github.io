@@ -268,7 +268,7 @@ const themeLink = document.getElementById("theme");
 const cards = document.querySelectorAll(".theme:not(.locked)");
 
 function setTheme(name) {
-    themeLink.href = `/${name}.css`;
+    themeLink.href = `/themes/${name}.css`;
     localStorage.setItem("theme", name);
 
     cards.forEach(card =>
