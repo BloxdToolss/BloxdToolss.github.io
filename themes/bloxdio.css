@@ -37,7 +37,7 @@
       .site-logo {
         position: absolute;
         top: 17px;
-        left: 38.5%;
+        left: calc(50% - 240px);
         width: 60px;               /* adjust to taste */
         height: 60px;
         object-fit: contain;
@@ -119,8 +119,9 @@
       .header-section h1 {
         position: absolute;
         top: 17px;
-        left: 42.5%;
-        right: 37%;
+        left: calc(50% + 20px);
+        width: 380px;
+        transform: translateX(-50%);
         font-size: 21px;
         font-weight: 700;
         margin: 0;
@@ -140,7 +141,8 @@
         margin: 0px 0 0 0;
         color: #ffffff !important;
         top: 77px;
-        left: 49%;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       /* Preserving baseline functional link parameters for Javascript scaling */
