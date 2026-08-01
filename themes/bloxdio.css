@@ -344,3 +344,33 @@
       .pfp-dropdown-open {
         display: flex;
       }
+
+      .nav-icon.user-pfp {
+        display: none;
+      }
+
+      .nav-btn.user-pfp {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtcHJlZml4PSJmYXMiIGRhdGEtaWNvbj0iZ2VhciIgY2xhc3M9InN2Zy1pbmxpbmUtLWZhIGZhLWdlYXIiIHJvbGU9ImltZyIgdmlld0JveD0iMCAwIDQ1MCA1NDAiIGFyaWEtaGlkZGVuPSJ0cnVlIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzMDNhNTkiIHN0cm9rZS13aWR0aD0iMzIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHBhaW50LW9yZGVyPSJzdHJva2UgZmlsbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgMTApIiBkPSJNMjI0IDI0OGExMjAgMTIwIDAgMSAwIDAtMjQwIDEyMCAxMjAgMCAxIDAgMCAyNDB6bS0yOS43IDU2Qzk1LjggMzA0IDE2IDM4My44IDE2IDQ4Mi4zIDE2IDQ5OC43IDI5LjMgNTEyIDQ1LjcgNTEybDM1Ni42IDBjMTYuNCAwIDI5LjctMTMuMyAyOS43LTI5LjcgMC05OC41LTc5LjgtMTc4LjMtMTc4LjMtMTc4LjNsLTU5LjQgMHoiPjwvcGF0aD48L3N2Zz4=');
+        width: 33.8px;
+        height: 33.8px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .nav-btn.user-pfp.loggedin {
+        background-image: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 33px;
+      }
+
+      .nav-icon.user-pfp.loggedin {
+        display: flex;
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
