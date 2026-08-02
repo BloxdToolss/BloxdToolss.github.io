@@ -178,6 +178,7 @@ async function loadTools() {
     const { data, error } = await supabaseClient
         .from("Tools")
         .select("*")
+        .eq("public", true)
         .order("id", { ascending: true });
 
     if (error) {
