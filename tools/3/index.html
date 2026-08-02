@@ -1,0 +1,126 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seed Generator</title>
+  <style>
+@keyframes k { to { --k: -1 } }
+
+@property --k {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #1b1e24;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+
+  background: 
+  repeating-linear-gradient(145deg, 
+      #0000 calc(var(--k)*100%), 
+      #a4a2e0, 
+      #0000 calc((var(--k) + 1)*100%)) 
+    50%/ 300% 300% #534ed9;
+  animation: k 8s linear infinite
+}
+
+button:hover {
+transform: scale(1.05);
+}
+
+.number {
+margin-bottom: 20px;
+}
+
+#randomNum {
+    display: none;
+  padding: 6px 12px;
+  border: 3px;
+  border-style: solid;
+  border-color: red;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  background: rgba(245, 0, 0, 0.4);
+}
+
+#randomNum.show {
+  display: inline-block
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.stars span {
+    position: absolute;
+    display: block;
+
+    background: white;
+    border-radius: 50%;
+
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+  </style>
+</head>
+<body>
+  <div class="stars"><span style="left: 56.1312%; top: 91.1152%; width: 2.64545px; height: 2.64545px; animation-delay: 0.721057s;"></span><span style="left: 86.9823%; top: 56.2186%; width: 1.55913px; height: 1.55913px; animation-delay: 1.60686s;"></span><span style="left: 43.6817%; top: 57.9169%; width: 1.68885px; height: 1.68885px; animation-delay: 1.88048s;"></span><span style="left: 92.9551%; top: 87.6858%; width: 3.13346px; height: 3.13346px; animation-delay: 0.687845s;"></span><span style="left: 71.1213%; top: 96.0016%; width: 3.79172px; height: 3.79172px; animation-delay: 2.73415s;"></span><span style="left: 39.6866%; top: 54.1146%; width: 2.10965px; height: 2.10965px; animation-delay: 3.35424s;"></span><span style="left: 72.02%; top: 33.8284%; width: 2.80797px; height: 2.80797px; animation-delay: 2.99538s;"></span><span style="left: 62.3032%; top: 68.7175%; width: 2.6086px; height: 2.6086px; animation-delay: 3.1421s;"></span><span style="left: 78.7161%; top: 35.6885%; width: 3.20401px; height: 3.20401px; animation-delay: 2.22643s;"></span><span style="left: 80.9201%; top: 35.312%; width: 1.06909px; height: 1.06909px; animation-delay: 2.98708s;"></span><span style="left: 31.4678%; top: 2.58884%; width: 2.2082px; height: 2.2082px; animation-delay: 3.60927s;"></span><span style="left: 80.7307%; top: 67.5763%; width: 3.27578px; height: 3.27578px; animation-delay: 1.53838s;"></span><span style="left: 56.8558%; top: 4.05882%; width: 1.65584px; height: 1.65584px; animation-delay: 2.80208s;"></span><span style="left: 62.1332%; top: 4.58017%; width: 3.06084px; height: 3.06084px; animation-delay: 0.150547s;"></span><span style="left: 91.8433%; top: 9.96566%; width: 3.60214px; height: 3.60214px; animation-delay: 3.16684s;"></span><span style="left: 60.0677%; top: 30.0639%; width: 2.53135px; height: 2.53135px; animation-delay: 1.10233s;"></span><span style="left: 19.9861%; top: 40.3513%; width: 2.75574px; height: 2.75574px; animation-delay: 1.00932s;"></span><span style="left: 38.1776%; top: 96.5614%; width: 1.56898px; height: 1.56898px; animation-delay: 1.24368s;"></span><span style="left: 26.4919%; top: 78.9111%; width: 3.70603px; height: 3.70603px; animation-delay: 3.56478s;"></span><span style="left: 28.3252%; top: 54.2357%; width: 2.8072px; height: 2.8072px; animation-delay: 3.50111s;"></span><span style="left: 99.7113%; top: 23.7985%; width: 2.46427px; height: 2.46427px; animation-delay: 1.40044s;"></span><span style="left: 71.0901%; top: 3.60848%; width: 1.4717px; height: 1.4717px; animation-delay: 3.43693s;"></span><span style="left: 46.3633%; top: 50.8924%; width: 3.32722px; height: 3.32722px; animation-delay: 3.78291s;"></span><span style="left: 93.2293%; top: 11.6526%; width: 2.9399px; height: 2.9399px; animation-delay: 0.841711s;"></span><span style="left: 46.3114%; top: 55.9089%; width: 2.29074px; height: 2.29074px; animation-delay: 1.36227s;"></span><span style="left: 79.4469%; top: 85.7339%; width: 1.66462px; height: 1.66462px; animation-delay: 3.65601s;"></span><span style="left: 49.5507%; top: 14.556%; width: 1.738px; height: 1.738px; animation-delay: 1.15752s;"></span><span style="left: 66.8157%; top: 17.2816%; width: 1.70079px; height: 1.70079px; animation-delay: 3.83048s;"></span><span style="left: 29.7828%; top: 94.755%; width: 1.6977px; height: 1.6977px; animation-delay: 3.17965s;"></span><span style="left: 64.7802%; top: 8.10818%; width: 2.7352px; height: 2.7352px; animation-delay: 0.675378s;"></span><span style="left: 23.1938%; top: 72.3313%; width: 1.99057px; height: 1.99057px; animation-delay: 2.60267s;"></span><span style="left: 35.1147%; top: 9.8458%; width: 3.81153px; height: 3.81153px; animation-delay: 2.06026s;"></span><span style="left: 1.73457%; top: 92.0817%; width: 2.54884px; height: 2.54884px; animation-delay: 0.0947736s;"></span><span style="left: 19.3651%; top: 79.22%; width: 2.9779px; height: 2.9779px; animation-delay: 1.5802s;"></span><span style="left: 71.6155%; top: 60.6396%; width: 3.04203px; height: 3.04203px; animation-delay: 2.85624s;"></span><span style="left: 64.4739%; top: 33.3815%; width: 3.98386px; height: 3.98386px; animation-delay: 1.91304s;"></span><span style="left: 25.7919%; top: 51.8929%; width: 3.079px; height: 3.079px; animation-delay: 2.1652s;"></span><span style="left: 90.0378%; top: 2.08929%; width: 2.60116px; height: 2.60116px; animation-delay: 0.588738s;"></span><span style="left: 15.1785%; top: 57.0607%; width: 3.27263px; height: 3.27263px; animation-delay: 0.900305s;"></span><span style="left: 76.5698%; top: 27.0932%; width: 3.46354px; height: 3.46354px; animation-delay: 1.82287s;"></span><span style="left: 38.3893%; top: 50.2782%; width: 1.34699px; height: 1.34699px; animation-delay: 2.78757s;"></span><span style="left: 35.8062%; top: 83.4842%; width: 2.32334px; height: 2.32334px; animation-delay: 0.49697s;"></span><span style="left: 25.8279%; top: 52.9349%; width: 3.45577px; height: 3.45577px; animation-delay: 1.56208s;"></span><span style="left: 86.7055%; top: 69.4285%; width: 1.17516px; height: 1.17516px; animation-delay: 0.466316s;"></span><span style="left: 24.2751%; top: 62.1542%; width: 2.55791px; height: 2.55791px; animation-delay: 2.36067s;"></span><span style="left: 7.55169%; top: 81.8897%; width: 2.48969px; height: 2.48969px; animation-delay: 3.41315s;"></span><span style="left: 26.0539%; top: 24.6001%; width: 1.85834px; height: 1.85834px; animation-delay: 1.57278s;"></span><span style="left: 98.597%; top: 67.116%; width: 3.41925px; height: 3.41925px; animation-delay: 0.671512s;"></span><span style="left: 24.4474%; top: 17.8474%; width: 1.8837px; height: 1.8837px; animation-delay: 3.47466s;"></span><span style="left: 14.6726%; top: 54.3316%; width: 2.16667px; height: 2.16667px; animation-delay: 1.61707s;"></span><span style="left: 28.9794%; top: 92.4337%; width: 3.62788px; height: 3.62788px; animation-delay: 1.77563s;"></span><span style="left: 98.1944%; top: 85.7763%; width: 3.52488px; height: 3.52488px; animation-delay: 1.93875s;"></span><span style="left: 58.422%; top: 65.2935%; width: 2.58833px; height: 2.58833px; animation-delay: 2.11659s;"></span><span style="left: 70.5405%; top: 29.636%; width: 2.53168px; height: 2.53168px; animation-delay: 2.31813s;"></span><span style="left: 23.7911%; top: 59.024%; width: 2.36823px; height: 2.36823px; animation-delay: 1.01627s;"></span><span style="left: 40.8608%; top: 20.9349%; width: 1.55398px; height: 1.55398px; animation-delay: 3.27992s;"></span><span style="left: 48.3905%; top: 81.6513%; width: 1.44787px; height: 1.44787px; animation-delay: 3.14429s;"></span><span style="left: 85.4766%; top: 41.4057%; width: 3.44061px; height: 3.44061px; animation-delay: 0.463079s;"></span><span style="left: 4.70215%; top: 71.2811%; width: 1.12176px; height: 1.12176px; animation-delay: 1.65058s;"></span><span style="left: 81.0554%; top: 79.7426%; width: 1.96183px; height: 1.96183px; animation-delay: 0.0701258s;"></span><span style="left: 28.4345%; top: 71.7376%; width: 1.41557px; height: 1.41557px; animation-delay: 2.28083s;"></span><span style="left: 38.2571%; top: 87.788%; width: 1.04604px; height: 1.04604px; animation-delay: 0.5862s;"></span><span style="left: 62.5919%; top: 25.6906%; width: 1.75576px; height: 1.75576px; animation-delay: 2.23051s;"></span><span style="left: 45.1515%; top: 71.267%; width: 3.37236px; height: 3.37236px; animation-delay: 2.04837s;"></span><span style="left: 70.8389%; top: 84.5958%; width: 1.20166px; height: 1.20166px; animation-delay: 1.66109s;"></span><span style="left: 45.8346%; top: 26.8723%; width: 3.28412px; height: 3.28412px; animation-delay: 2.43734s;"></span><span style="left: 45.951%; top: 40.1797%; width: 1.20718px; height: 1.20718px; animation-delay: 1.19878s;"></span><span style="left: 63.7179%; top: 39.755%; width: 1.21083px; height: 1.21083px; animation-delay: 0.893791s;"></span><span style="left: 82.8498%; top: 39.8245%; width: 1.67097px; height: 1.67097px; animation-delay: 2.6888s;"></span><span style="left: 30.9205%; top: 50.478%; width: 2.58276px; height: 2.58276px; animation-delay: 2.18652s;"></span><span style="left: 40.5089%; top: 33.5663%; width: 3.8038px; height: 3.8038px; animation-delay: 1.76972s;"></span><span style="left: 11.4329%; top: 94.0423%; width: 3.1784px; height: 3.1784px; animation-delay: 0.121778s;"></span><span style="left: 88.2437%; top: 88.3599%; width: 2.2455px; height: 2.2455px; animation-delay: 1.55768s;"></span><span style="left: 15.134%; top: 60.7649%; width: 3.95335px; height: 3.95335px; animation-delay: 3.43912s;"></span><span style="left: 58.8606%; top: 60.4271%; width: 1.55221px; height: 1.55221px; animation-delay: 1.26408s;"></span><span style="left: 45.3473%; top: 17.1291%; width: 3.75193px; height: 3.75193px; animation-delay: 0.794007s;"></span><span style="left: 33.1265%; top: 55.6044%; width: 2.7244px; height: 2.7244px; animation-delay: 1.01832s;"></span><span style="left: 20.5445%; top: 18.5933%; width: 2.24243px; height: 2.24243px; animation-delay: 1.66415s;"></span><span style="left: 6.76127%; top: 79.0567%; width: 1.40614px; height: 1.40614px; animation-delay: 2.85157s;"></span><span style="left: 82.4653%; top: 76.5274%; width: 1.92047px; height: 1.92047px; animation-delay: 1.69185s;"></span><span style="left: 55.6085%; top: 50.4682%; width: 2.31624px; height: 2.31624px; animation-delay: 2.40767s;"></span><span style="left: 39.4024%; top: 81.9111%; width: 1.87269px; height: 1.87269px; animation-delay: 2.66583s;"></span><span style="left: 55.6971%; top: 19.1202%; width: 3.78459px; height: 3.78459px; animation-delay: 3.23142s;"></span><span style="left: 43.5864%; top: 87.8981%; width: 2.74742px; height: 2.74742px; animation-delay: 3.9958s;"></span><span style="left: 90.5537%; top: 23.2447%; width: 1.18246px; height: 1.18246px; animation-delay: 0.27465s;"></span><span style="left: 34.4361%; top: 63.6848%; width: 3.89909px; height: 3.89909px; animation-delay: 3.99916s;"></span><span style="left: 17.2292%; top: 84.3086%; width: 2.65716px; height: 2.65716px; animation-delay: 2.85988s;"></span><span style="left: 64.8841%; top: 74.8913%; width: 3.53015px; height: 3.53015px; animation-delay: 3.33159s;"></span><span style="left: 35.7797%; top: 16.5497%; width: 1.15926px; height: 1.15926px; animation-delay: 2.15689s;"></span><span style="left: 66.7268%; top: 61.5685%; width: 1.47885px; height: 1.47885px; animation-delay: 0.533179s;"></span><span style="left: 76.3968%; top: 68.1682%; width: 1.59331px; height: 1.59331px; animation-delay: 3.7063s;"></span><span style="left: 83.1826%; top: 42.4395%; width: 1.34013px; height: 1.34013px; animation-delay: 3.97219s;"></span><span style="left: 97.6073%; top: 30.9039%; width: 3.94883px; height: 3.94883px; animation-delay: 0.648011s;"></span><span style="left: 7.8341%; top: 35.4183%; width: 1.57336px; height: 1.57336px; animation-delay: 0.512266s;"></span><span style="left: 5.20724%; top: 80.8016%; width: 1.98141px; height: 1.98141px; animation-delay: 2.2875s;"></span><span style="left: 91.5375%; top: 15.7254%; width: 2.29432px; height: 2.29432px; animation-delay: 3.21804s;"></span><span style="left: 95.2447%; top: 56.1106%; width: 1.54129px; height: 1.54129px; animation-delay: 2.2287s;"></span><span style="left: 99.285%; top: 76.6431%; width: 2.32076px; height: 2.32076px; animation-delay: 0.081925s;"></span><span style="left: 80.9926%; top: 7.37457%; width: 3.81339px; height: 3.81339px; animation-delay: 1.66835s;"></span><span style="left: 78.0904%; top: 65.3167%; width: 2.27946px; height: 2.27946px; animation-delay: 2.36934s;"></span><span style="left: 71.7007%; top: 68.4688%; width: 2.16625px; height: 2.16625px; animation-delay: 2.72s;"></span><span style="left: 32.4517%; top: 9.01019%; width: 1.30507px; height: 1.30507px; animation-delay: 2.69771s;"></span><span style="left: 42.4966%; top: 51.9642%; width: 3.41209px; height: 3.41209px; animation-delay: 2.84339s;"></span><span style="left: 55.3518%; top: 32.0349%; width: 1.96705px; height: 1.96705px; animation-delay: 3.21556s;"></span><span style="left: 9.55081%; top: 84.6424%; width: 1.58442px; height: 1.58442px; animation-delay: 2.21032s;"></span><span style="left: 51.3217%; top: 74.3343%; width: 2.95691px; height: 2.95691px; animation-delay: 2.86979s;"></span><span style="left: 6.5904%; top: 68.0098%; width: 1.9102px; height: 1.9102px; animation-delay: 2.99405s;"></span><span style="left: 1.58936%; top: 63.5825%; width: 2.98529px; height: 2.98529px; animation-delay: 3.53923s;"></span><span style="left: 17.424%; top: 19.0593%; width: 1.51239px; height: 1.51239px; animation-delay: 3.08471s;"></span><span style="left: 3.93974%; top: 15.7186%; width: 1.51544px; height: 1.51544px; animation-delay: 1.2868s;"></span><span style="left: 95.3377%; top: 97.5816%; width: 1.86892px; height: 1.86892px; animation-delay: 1.69513s;"></span><span style="left: 36.5665%; top: 79.2465%; width: 3.02853px; height: 3.02853px; animation-delay: 1.45763s;"></span><span style="left: 82.6119%; top: 35.164%; width: 1.47843px; height: 1.47843px; animation-delay: 1.35329s;"></span><span style="left: 98.5172%; top: 15.883%; width: 2.61325px; height: 2.61325px; animation-delay: 2.65203s;"></span><span style="left: 46.2645%; top: 28.1114%; width: 3.94279px; height: 3.94279px; animation-delay: 3.88258s;"></span><span style="left: 2.75847%; top: 50.1885%; width: 1.10181px; height: 1.10181px; animation-delay: 1.00039s;"></span><span style="left: 16.8699%; top: 21.9641%; width: 3.7415px; height: 3.7415px; animation-delay: 1.11662s;"></span><span style="left: 2.421%; top: 97.089%; width: 3.4662px; height: 3.4662px; animation-delay: 1.48013s;"></span><span style="left: 10.0822%; top: 44.1069%; width: 1.94697px; height: 1.94697px; animation-delay: 3.67815s;"></span><span style="left: 31.4089%; top: 5.74793%; width: 1.83088px; height: 1.83088px; animation-delay: 3.75213s;"></span><span style="left: 35.7706%; top: 83.4707%; width: 3.43295px; height: 3.43295px; animation-delay: 3.21969s;"></span><span style="left: 97.6823%; top: 34.7894%; width: 3.8011px; height: 3.8011px; animation-delay: 2.55601s;"></span><span style="left: 39.8713%; top: 61.1367%; width: 3.1324px; height: 3.1324px; animation-delay: 2.53325s;"></span><span style="left: 39.7241%; top: 47.7975%; width: 1.28793px; height: 1.28793px; animation-delay: 0.176192s;"></span><span style="left: 52.4633%; top: 28.978%; width: 3.44789px; height: 3.44789px; animation-delay: 3.25136s;"></span><span style="left: 60.7702%; top: 69.5211%; width: 3.08103px; height: 3.08103px; animation-delay: 2.57965s;"></span><span style="left: 32.3502%; top: 35.2753%; width: 2.8525px; height: 2.8525px; animation-delay: 2.00908s;"></span><span style="left: 40.2461%; top: 98.2631%; width: 1.37246px; height: 1.37246px; animation-delay: 0.112974s;"></span><span style="left: 70.0992%; top: 25.3213%; width: 2.58781px; height: 2.58781px; animation-delay: 2.42523s;"></span><span style="left: 15.6928%; top: 12.614%; width: 1.41262px; height: 1.41262px; animation-delay: 0.683539s;"></span><span style="left: 97.371%; top: 39.2967%; width: 2.88043px; height: 2.88043px; animation-delay: 3.39883s;"></span><span style="left: 43.3633%; top: 20.6899%; width: 1.70009px; height: 1.70009px; animation-delay: 1.70633s;"></span><span style="left: 38.9022%; top: 87.6773%; width: 1.34562px; height: 1.34562px; animation-delay: 0.931327s;"></span><span style="left: 26.3891%; top: 74.0645%; width: 1.23925px; height: 1.23925px; animation-delay: 2.11375s;"></span><span style="left: 68.6366%; top: 88.878%; width: 3.1192px; height: 3.1192px; animation-delay: 3.8756s;"></span><span style="left: 64.1264%; top: 8.85989%; width: 2.32177px; height: 2.32177px; animation-delay: 0.827667s;"></span><span style="left: 89.4916%; top: 18.0435%; width: 2.28456px; height: 2.28456px; animation-delay: 1.90605s;"></span><span style="left: 43.9428%; top: 70.2836%; width: 1.97698px; height: 1.97698px; animation-delay: 1.00888s;"></span><span style="left: 60.285%; top: 3.73175%; width: 2.60823px; height: 2.60823px; animation-delay: 1.89189s;"></span><span style="left: 87.541%; top: 44.964%; width: 1.85393px; height: 1.85393px; animation-delay: 2.12018s;"></span><span style="left: 6.84328%; top: 3.98696%; width: 3.88896px; height: 3.88896px; animation-delay: 2.21335s;"></span><span style="left: 49.6182%; top: 89.6797%; width: 3.90896px; height: 3.90896px; animation-delay: 1.0105s;"></span><span style="left: 96.6141%; top: 42.8437%; width: 2.01424px; height: 2.01424px; animation-delay: 1.39868s;"></span><span style="left: 81.8132%; top: 20.5511%; width: 3.58176px; height: 3.58176px; animation-delay: 0.225403s;"></span><span style="left: 73.0053%; top: 60.1812%; width: 1.25948px; height: 1.25948px; animation-delay: 1.33222s;"></span><span style="left: 53.9575%; top: 33.5595%; width: 2.29755px; height: 2.29755px; animation-delay: 3.27825s;"></span><span style="left: 85.4763%; top: 42.3763%; width: 1.63963px; height: 1.63963px; animation-delay: 3.05498s;"></span><span style="left: 99.4809%; top: 3.69656%; width: 1.53704px; height: 1.53704px; animation-delay: 1.66193s;"></span><span style="left: 72.6001%; top: 68.0061%; width: 2.16909px; height: 2.16909px; animation-delay: 3.57743s;"></span><span style="left: 44.8386%; top: 64.0216%; width: 3.04992px; height: 3.04992px; animation-delay: 3.3211s;"></span></div>
+  <h1>Random Seed Generator</h1>
+  <p class="description">This tool randomly generates a value from 0-5000000000</p>
+  <p class="reveal">Your randomly generated seed is:</p>
+  <p class="number"><span id="randomNum"></span></p>
+  <button onclick="randomNumGen()">Generate</button>
+  <script>
+function randomNumGen() {
+const randomNum = Math.floor(Math.random() * 5000000001) + 1;
+console.log(randomNum);
+
+    const output = document.getElementById("randomNum");
+    output.textContent = randomNum;
+    output.classList.add("show");
+} ;
+
+const stars = document.querySelector(".stars");
+
+for (let i = 0; i < 150; i++) {
+    const star = document.createElement("span");
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+
+    const size = Math.random() * 3 + 1;
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    star.style.animationDelay = Math.random() * 4 + "s";
+
+    stars.appendChild(star);
+}
+</script>
+
+
+</body></html>
