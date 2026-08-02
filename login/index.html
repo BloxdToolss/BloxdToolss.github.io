@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>BloxdTools - Login</title>
-<link rel="stylesheet" href="/themes/default.css">
+<link id="theme" rel="stylesheet" href="/themes/default.css">
 <style>
       body {
         margin: 0;
@@ -143,6 +143,12 @@ async function checkSession() {
 checkSession();
 
 </script>
+<script>
+    const themeLink = document.getElementById("theme");
 
+    const savedTheme =  localStorage.getItem("theme") || "default";
+
+    themeLink.href = `themes/${savedTheme}.css`;
+    </script>
 </body>
 </html>
