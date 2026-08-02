@@ -356,6 +356,11 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        transition: transform .2s,margin .2s,border-width .2s,border-color .2s;
+      }
+
+      .nav-btn.user-pfp:hover {
+        transform:scale(1.05)
       }
 
       .nav-btn.user-pfp.loggedin {

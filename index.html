@@ -93,42 +93,7 @@
       
       <div class="tools-grid">
         <!-- Tool Cards -->
-        <div class="tool-card">
-          <div class="thumbnail-container">
-            <img src="tools/1/thumbnail.png" alt src="tools/1/name.txt">
-          </div>
-          <div class="card-content">
-            <a href="tools/1" class="tool-title-link">
-              MCBE to Bloxd TPack Converter
-            </a>
-            <div class="metadata-row">
-              <a href="https://bloxd.io/player/_Crafty" class="metadata-author-link" style="--current-size: 13px;">_Crafty</a>
-              <span class="bullet-separator">•</span>
-              <span>v1.0.2</span>
-              <span class="bullet-separator">•</span>
-              <span>June 20, 2026</span>
-            </div>
-          </div>
-        </div>
-        <!--
-        <div class="tool-card">
-          <div class="thumbnail-container">
-            <img src="tools/2/thumbnail.png" alt src="tools/2/name.txt">
-          </div>
-          <div class="card-content">
-            <a href="tools/2" class="tool-title-link">
-              Bloxd CSS Editor
-            </a>
-            <div class="metadata-row">
-              <a href="https://bloxd.io/player/Bloxd_manYT" class="metadata-author-link" style="--current-size: 13px;">Bloxd_manYT</a>
-              <span class="bullet-separator">•</span>
-              <span>v1.6</span>
-              <span class="bullet-separator">•</span>
-              <span>July 11, 2026</span>
-            </div>
-          </div>
-        </div>
-        -->
+        
       </div>
 
       <!-- Maintained positioning anchor element logic block underneath grid output -->
@@ -207,6 +172,68 @@ async function handleLogout(event) {
   const { error } = await supabaseClient.auth.signOut()
   window.location.href = '/';
 }
+
+// load tools
+async function loadTools() {
+    const { data, error } = await supabaseClient
+        .from("Tools")
+        .select("*")
+        .order("id", { ascending: true });
+
+    if (error) {
+        console.error("Failed to load tools:", error);
+        return;
+    }
+
+    const grid = document.querySelector(".tools-grid");
+
+    grid.innerHTML = "";
+
+    data.forEach(tool => {
+        const card = document.createElement("div");
+
+        card.className = "tool-card";
+
+        card.innerHTML = `
+            <div class="thumbnail-container">
+                <img src="tools/${tool.id}/thumbnail.png">
+            </div>
+
+            <div class="card-content">
+                <a href="tools/${tool.id}" class="tool-title-link">
+                    ${tool.name}
+                </a>
+
+                <div class="metadata-row">
+                    <a href="https://bloxd.io/player/${tool.author}" 
+                       class="metadata-author-link"
+                       style="--current-size: 13px;">
+                        ${tool.author}
+                    </a>
+
+                    <span class="bullet-separator">•</span>
+
+                    <span>v${tool.version}</span>
+
+                    <span class="bullet-separator">•</span>
+
+                    <span>${tool.created_date}</span>
+                </div>
+            </div>
+        `;
+
+
+        card.addEventListener("click", () => {
+            window.location.href = `tools/${tool.id}`;
+        });
+
+        card.style.cursor = "pointer";
+
+        grid.appendChild(card);
+    });
+}
+
+loadTools();
 </script>
 <script>
         // dropdown toggle
@@ -226,9 +253,9 @@ async function handleLogout(event) {
     <script>
     const themeLink = document.getElementById("theme");
 
-    const savedTheme = localStorage.getItem("theme") || "default";
+    const savedTheme =  localStorage.getItem("theme") || "default";
 
-    themeLink.href = `/themes/${savedTheme}.css`;
+    themeLink.href = `themes/${savedTheme}.css`;
     </script>
   </body>
 </html>
