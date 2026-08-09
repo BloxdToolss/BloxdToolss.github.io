@@ -64,6 +64,7 @@
         }
         .legal-container code {
             background: rgba(255, 255, 255, 0.1);
+            background: #ebedef;
             padding: 2px 6px;
             border-radius: 4px;
             font-family: monospace;
@@ -83,7 +84,7 @@
         <div class="header-right">
             <div class="gap"></div>
             <a href="/login" class="nav-btn user-pfp" rel="noopener noreferrer" title="Login">
-                <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
+                <img src="/img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
             </a>
         </div>
     </div>
@@ -91,25 +92,25 @@
     <!-- pfp dropdown menu -->
     <div id="pfpDropdownMenu" class="profile-dropdown-menu">
         <div class="dropdown-user-info">
-            <img src="img/icons/user.svg" class="drop-menu user-pfp" alt="Profile Picture" />
+            <img src="/img/icons/user.svg" class="drop-menu user-pfp" alt="Profile Picture" />
             <div class="dropdown-user-meta">
                 <span class="userDisplayName dropdown-user-meta"></span> <br>
                 <span class="username dropdown-user-meta"></span>
             </div>
         </div>
         <div class="dropdown-divider"></div>
-        <a href="/user/" class="profilebtn dropdown-item"><img src="img/icons/user.svg" style="width: 20px;"> profile</a>
-        <a href="/edit-profile" class="dropdown-item"><img src="img/icons/user-pen.svg" style="width: 20px;"> edit profile</a>
+        <a href="/user/" class="profilebtn dropdown-item"><img src="/img/icons/user.svg" style="width: 20px;"> profile</a>
+        <a href="/edit-profile" class="dropdown-item"><img src="/img/icons/user-pen.svg" style="width: 20px;"> edit profile</a>
         <div class="dropdown-divider"></div>
-        <a href="/settings" class="dropdown-item"><img src="img/icons/settings.svg" style="width: 20px;"> settings</a>
-        <a href="/themes" class="dropdown-item beta-item"><img src="img/icons/paint.svg" style="width: 20px;"> themes <span class="beta-badge">BETA</span></a>
-        <a href="https://discord.com/invite/C2TVxDSep3" class="dropdown-item" target="_blank"><img src="img/discord-logo.svg" style="width: 20px; filter: brightness(0%);"> discord</a>
-        <a href="https://github.com/BloxdToolss/" class="dropdown-item" target="_blank"><img src="img/github-logo.svg" style="width: 20px; filter: brightness(0%);"> github</a>
+        <a href="/settings" class="dropdown-item"><img src="/img/icons/settings.svg" style="width: 20px;"> settings</a>
+        <a href="/themes" class="dropdown-item beta-item"><img src="/img/icons/paint.svg" style="width: 20px;"> themes <span class="beta-badge">BETA</span></a>
+        <a href="https://discord.com/invite/C2TVxDSep3" class="dropdown-item" target="_blank"><img src="/img/discord-logo.svg" style="width: 20px; filter: brightness(0%);"> discord</a>
+        <a href="https://github.com/BloxdToolss/" class="dropdown-item" target="_blank"><img src="/img/github-logo.svg" style="width: 20px; filter: brightness(0%);"> github</a>
         <div class="dropdown-divider"></div>
-        <a href="/tos" class="dropdown-item"><img src="img/icons/terms-info.svg" style="width: 20px;"> terms of service</a>
-        <a href="/privacy" class="dropdown-item"><img src="img/icons/user-lock.svg" style="width: 20px;"> privacy policy</a>
+        <a href="/tos" class="dropdown-item"><img src="/img/icons/terms-info.svg" style="width: 20px;"> terms of service</a>
+        <a href="/privacy" class="dropdown-item"><img src="/img/icons/user-lock.svg" style="width: 20px;"> privacy policy</a>
         <div class="dropdown-divider"></div>
-        <a href="/" onclick="handleLogout(event)" class="dropdown-item logout-btn"><img src="img/icons/user-logout.svg" style="width: 20px;"> logout</a>
+        <a href="/" onclick="handleLogout(event)" class="dropdown-item logout-btn"><img src="/img/icons/user-logout.svg" style="width: 20px;"> logout</a>
     </div>
 
     <!-- Main Content Area -->
@@ -118,11 +119,11 @@
         <p>Last Updated: August 2026</p>
         
         <h2>1. Project Authenticity &amp; History</h2>
-        <p><strong>BloxdTools by Crafty</strong> is the official, community-driven platform engineered for advanced Bloxd.io custom tools, layout tailoring, and converter utilities. Our platform is built on custom, proprietary frontend code, meticulously written down to the pixel without a single <code>!important</code> tag to ensure native theme compatibility.</p>
-        <p>Please note that the third-party domain <em>bloxdtools.com</em> was rushed to deployment as a low-effort placeholder using generic stock graphics and templates. In contrast, this platform (moving to the official <code>bloxdtools.github.io</code> organizational network) represents the active, high-effort, custom-coded hub for the Bloxd community.</p>
+        <p><strong>BloxdTools by Crafty</strong> is the official, community-driven platform engineered for advanced custom tools for Bloxd.io. Our platform is built on custom, proprietary frontend code, meticulously written down to the pixel without a single <code>!important</code> tag to ensure native theme compatibility.</p>
+        <p>Please note that the third-party domain <code>bloxdtools.com</code> was rushed to deployment as a low-effort placeholder using generic stock graphics and templates. In contrast, this platform (moving to the <code>bloxdtools.github.io</code> organizational network) represents the active, high-effort, custom-coded hub for the Bloxd community.</p>
 
         <h2>2. Strict No-App-Downloads Policy</h2>
-        <p>To guarantee maximum security for our users, BloxdTools enforces a strict <strong>No-App-Downloads</strong> stance. All texture conversions, interface customizers, and scripting utilities execute 100% sandboxed within your local browser memory using client-side JavaScript. We will never prompt you to download executable files (<code>.exe</code>) or local applications.</p>
+        <p>To guarantee maximum security for our users, BloxdTools enforces a strict <strong>No-App-Downloads</strong> stance. All texture conversions, interface customizers, and scripting utilities execute 100% sandboxed within your local browser memory using client-side JavaScript. We will never prompt you to download executable files (<code>.exe</code>) or local applications. If you do happen to get one inside of a custom tool, report it immediately.</p>
 
         <h2>3. Proprietary &amp; Closed-Source Code</h2>
         <p>The layout mechanics, core custom stylesheet overrides, interface logic, and custom theme layouts featured on this web app are proprietary property owned by Crafty. Users are strictly prohibited from copying, cloning, redistributing, or reverse-engineering our structural UI code wrappers or frontend architecture.</p>
@@ -136,10 +137,11 @@
             <li>Your submission must put genuine effort into the design and layout.</li>
             <li>Submissions must contain absolutely no dangerous installations, app downloads, scripts, executable calls, or inappropriate/violent content.</li>
         </ul>
-        <p>Every submission is strictly reviewed by a moderator before being added to the database. Violating any of these parameters will result in a permanent ban of your profile and linked OAuth identity.</p>
+        <p>Every submission is strictly reviewed by a moderator before being added to the database. Violating security parameters or uploading malicious files will  result in a 1 week ban of your account. Submissions that do not meet formatting guidelines will only result in a rejection of your tool without punishments, and creators are welcome to resubmit their tools after fixing the issue</p>
 
-        <h2>5. Limitation of Liability</h2>
-        <p>BloxdTools is an independent fan utility hub. We are entirely unofficial and are not affiliated with, authorized by, or endorsed by Bloxd.io, GitHub, or Discord.</p>
+        <h2>5. Community Standing & Legal Disclaimer</h2>
+        <p><strong>BloxdTools</strong> is the official community hub dedicated to the creation, hosting, and deployment of user-generated tools, stylesheets, and custom configurations for Bloxd.io. While we serve as the primary and definitive utility platform for the active player base, BloxdTools is an independent entity and is not legally affiliated with, operated by, or corporate-endorsed by Bloxd LTD.</p>
+
     </div>
     <script>
       document.querySelectorAll('.tool-card').forEach(card => {
@@ -232,4 +234,4 @@ async function handleLogout(event) {
     themeLink.href = `/themes/${savedTheme}.css`;
     </script>
 </body>
-</html> 
+</html>
