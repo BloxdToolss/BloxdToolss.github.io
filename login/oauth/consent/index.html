@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Discord Banner -->
+    <meta property="og:site_name" content="BloxdTools">
+    <meta property="og:title" content="Privacy Policy - BloxdTools">
+    <meta property="og:description" content="Official Privacy Policy for BloxdTools by Crafty. Learn how we secure your data.">
+    <meta property="og:image" content="tools/thumbnails/1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Privacy Policy - BloxdTools</title>
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link id="theme" rel="stylesheet" href="/themes/default.css">
+    <style>
+        .legal-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 700px;
+            overflow-wrap: break-word;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 50px;
+            color: var(--text-main);
+        }
+        .legal-container:hover {
+            border-color: #eeeeee;
+            box-shadow: 0 4px 12px rgba(112, 172, 255, 0.15);
+        }
+        .legal-container h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+        .legal-container h2 {
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            color: var(--text-main);
+        }
+        .legal-container p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        .legal-container ul {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        .legal-container code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Branding Frame -->
+    <div class="header-section">
+        <div class="header-left">
+            <img src="/img/favicon.svg" class="site-logo" />
+            <div class="site-branding">
+                <h1>BloxdTools</h1>
+                <h3>by <a href="https://bloxd.io/player/_Crafty" class="website-author-link" style="--current-size: 10.5px;">Crafty</a></h3>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="gap"></div>
+            <a href="/login" class="nav-btn user-pfp" rel="noopener noreferrer" title="Login">
+                <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
+            </a>
+        </div>
+    </div>
+
+    <!-- pfp dropdown menu -->
+    <div id="pfpDropdownMenu" class="profile-dropdown-menu">
+        <div class="dropdown-user-info">
+            <img src="img/icons/user.svg" class="drop-menu user-pfp" alt="Profile Picture" />
+            <div class="dropdown-user-meta">
+                <span class="userDisplayName dropdown-user-meta"></span> <br>
+                <span class="username dropdown-user-meta"></span>
+            </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <a href="/user/" class="profilebtn dropdown-item"><img src="img/icons/user.svg" style="width: 20px;"> profile</a>
+        <a href="/edit-profile" class="dropdown-item"><img src="img/icons/user-pen.svg" style="width: 20px;"> edit profile</a>
+        <div class="dropdown-divider"></div>
+        <a href="/settings" class="dropdown-item"><img src="img/icons/settings.svg" style="width: 20px;"> settings</a>
+        <a href="/themes" class="dropdown-item beta-item"><img src="img/icons/paint.svg" style="width: 20px;"> themes <span class="beta-badge">BETA</span></a>
+        <a href="https://discord.com/invite/C2TVxDSep3" class="dropdown-item" target="_blank"><img src="img/discord-logo.svg" style="width: 20px; filter: brightness(0%);"> discord</a>
+        <a href="https://github.com/BloxdToolss/" class="dropdown-item" target="_blank"><img src="img/github-logo.svg" style="width: 20px; filter: brightness(0%);"> github</a>
+        <div class="dropdown-divider"></div>
+        <a href="/tos" class="dropdown-item"><img src="img/icons/terms-info.svg" style="width: 20px;"> terms of service</a>
+        <a href="/privacy" class="dropdown-item"><img src="img/icons/user-lock.svg" style="width: 20px;"> privacy policy</a>
+        <div class="dropdown-divider"></div>
+        <a href="/" onclick="handleLogout(event)" class="dropdown-item logout-btn"><img src="img/icons/user-logout.svg" style="width: 20px;"> logout</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="legal-container">
+        <h1>Privacy Policy</h1>
+        <p>Last Updated: August 2026</p>
+
+        <h2>1. Data Collection via Discord OAuth</h2>
+        <p>When you log into BloxdTools using your Discord account, our third-party data secure wrapper (Supabase Auth) requests minimal public identification scopes. We collect your public Discord username, unique identifier, profile picture, account banner, and verified email address.</p>
+
+        <h2>2. How Your Information is Used</h2>
+        <p>Your data is processed strictly to provide a customized user experience. Your email address and unique identity are used as database primary keys to securely save your uploaded HTML layouts, moderator submission rankings, and personal hub configuration files. We do not sell, rent, leak, or distribute user email records or authorization profiles to any third-party marketing entities.</p>
+
+        <h2>3. Local Data Storage &amp; Cookies</h2>
+        <p>To avoid unneeded database calls and maximize site performance, your active layout preferences (such as toggling between the BloxdHub 4.0 dark theme and the Bloxd.io interface look) are saved client-side utilizing your browser's native <code>localStorage</code> sandbox engine. No tracking scripts or commercial data cookies are deployed.</p>
+
+        <h2>4. Data Deletion and Account Revocation</h2>
+        <p>Users maintain complete ownership over their profiles. If you wish to wipe your records from our databases, you can do so instantly by heading to your settings panel or revoking app access directly through your native Discord client settings via <strong>User Settings &gt; Authorized Apps</strong>.</p>
+    </div>
+    <script>
+      document.querySelectorAll('.tool-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const link = card.querySelector('a');
+    if (link) window.location.href = link.href;
+  });
+  card.style.cursor = 'pointer';
+});
+    </script>
+    
+    <!-- load backend -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabaseClient = supabase.createClient(
+    "https://teqlwaiasfhlptolmyii.supabase.co",
+    "sb_publishable_E_2OtvS_u4YIJSqGXSUMzQ_b7Jy3mvO"
+);
+
+async function loadProfile() {
+    const { data } = await supabaseClient.auth.getUser();
+
+    const user = data.user;
+
+    if (!user) return;
+
+    const avatar =
+        user.user_metadata.avatar_url ||
+        user.user_metadata.picture;
+
+    const userPfp = document.querySelector(".nav-icon.user-pfp");
+    const userMenuPfp = document.querySelector(".drop-menu.user-pfp");
+    const pfpBtn = document.querySelector(".nav-btn.user-pfp");
+    const userDisplayName = document.querySelector('.userDisplayName');
+    const userEmail = document.querySelector('.userEmail');
+    const profileBtn = document.querySelector('.profilebtn.dropdown-item');
+    const usernameElement = document.querySelector('.username');
+    const usersUsername = user.user_metadata.full_name;
+
+    if (avatar) {
+            userPfp.src = avatar;
+            userPfp.alt = "";
+            userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
+            userMenuPfp.src = avatar;
+            pfpBtn.title = "";
+            pfpBtn.href = "";
+            pfpBtn.classList.add('loggedin');
+            profileBtn.href = `/user/${usersUsername}/`;
+        
+    }
+        const meta = user.user_metadata;
+        userDisplayName.textContent = meta.custom_claims?.global_name || 
+                                      meta.full_name;
+
+        usernameElement.textContent = meta.user_name || 
+                                      meta.full_name;
+
+        userEmail.textContent = user.email;
+}
+
+loadProfile();
+
+// logout
+async function handleLogout(event) {
+  if (event) event.preventDefault(); 
+  const { error } = await supabaseClient.auth.signOut()
+  window.location.href = '/';
+}
+</script>
+<script>
+        // dropdown toggle
+        const pfpBtn = document.querySelector(".nav-btn.user-pfp");
+        const pfpMenu = document.querySelector('#pfpDropdownMenu');
+
+        pfpBtn.addEventListener('click', (event) => {
+            if (pfpBtn.classList.contains('loggedin')) {
+              // Stops the browser from trying to navigate or refresh when clicked
+                event.preventDefault(); 
+        
+                // Automatically adds 'pfp-dropdown-open' if it's missing, or removes it if it's there
+               pfpMenu.classList.toggle('pfp-dropdown-open');
+            }
+         });
+    </script>
+    <script>
+    const themeLink = document.getElementById("theme");
+
+    const savedTheme =  localStorage.getItem("theme") || "default";
+
+    themeLink.href = `/themes/${savedTheme}.css`;
+    </script>
+</body>
+</html>
