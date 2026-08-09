@@ -1,1 +1,235 @@
-https://bloxdtoolss.github.io/tos/
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Discord Banner -->
+    <meta property="og:site_name" content="BloxdTools">
+    <meta property="og:title" content="Terms of Service - BloxdTools">
+    <meta property="og:description" content="Official Terms of Service and Project History for BloxdTools by Crafty.">
+    <meta property="og:image" content="tools/thumbnails/1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Terms of Service - BloxdTools</title>
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link id="theme" rel="stylesheet" href="/themes/default.css">
+    <style>
+        .legal-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 700px;
+            overflow-wrap: break-word;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 50px;
+            color: var(--text-color, #ffffff);
+        }
+        .legal-container:hover {
+            border-color: #eeeeee;
+            box-shadow: 0 4px 12px rgba(112, 172, 255, 0.15);
+        }
+        .legal-container h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: var(--text-heading, #ffffff);
+        }
+        .legal-container h2 {
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            color: var(--accent-blue);
+        }
+        .legal-container p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        .legal-container ul {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        .legal-container code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Branding Frame -->
+    <div class="header-section">
+        <div class="header-left">
+            <img src="/img/favicon.svg" class="site-logo" />
+            <div class="site-branding">
+                <h1>BloxdTools</h1>
+                <h3>by <a href="https://bloxd.io/player/_Crafty" class="website-author-link" style="--current-size: 10.5px;">Crafty</a></h3>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="gap"></div>
+            <a href="/login" class="nav-btn user-pfp" rel="noopener noreferrer" title="Login">
+                <img src="img/icons/user.svg" class="nav-icon user-pfp" alt="Login" />
+            </a>
+        </div>
+    </div>
+
+    <!-- pfp dropdown menu -->
+    <div id="pfpDropdownMenu" class="profile-dropdown-menu">
+        <div class="dropdown-user-info">
+            <img src="img/icons/user.svg" class="drop-menu user-pfp" alt="Profile Picture" />
+            <div class="dropdown-user-meta">
+                <span class="userDisplayName dropdown-user-meta"></span> <br>
+                <span class="username dropdown-user-meta"></span>
+            </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <a href="/user/" class="profilebtn dropdown-item"><img src="img/icons/user.svg" style="width: 20px;"> profile</a>
+        <a href="/edit-profile" class="dropdown-item"><img src="img/icons/user-pen.svg" style="width: 20px;"> edit profile</a>
+        <div class="dropdown-divider"></div>
+        <a href="/settings" class="dropdown-item"><img src="img/icons/settings.svg" style="width: 20px;"> settings</a>
+        <a href="/themes" class="dropdown-item beta-item"><img src="img/icons/paint.svg" style="width: 20px;"> themes <span class="beta-badge">BETA</span></a>
+        <a href="https://discord.com/invite/C2TVxDSep3" class="dropdown-item" target="_blank"><img src="img/discord-logo.svg" style="width: 20px; filter: brightness(0%);"> discord</a>
+        <a href="https://github.com/BloxdToolss/" class="dropdown-item" target="_blank"><img src="img/github-logo.svg" style="width: 20px; filter: brightness(0%);"> github</a>
+        <div class="dropdown-divider"></div>
+        <a href="/tos" class="dropdown-item"><img src="img/icons/terms-info.svg" style="width: 20px;"> terms of service</a>
+        <a href="/privacy" class="dropdown-item"><img src="img/icons/user-lock.svg" style="width: 20px;"> privacy policy</a>
+        <div class="dropdown-divider"></div>
+        <a href="/" onclick="handleLogout(event)" class="dropdown-item logout-btn"><img src="img/icons/user-logout.svg" style="width: 20px;"> logout</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="legal-container">
+        <h1>Terms of Service</h1>
+        <p>Last Updated: August 2026</p>
+        
+        <h2>1. Project Authenticity &amp; History</h2>
+        <p><strong>BloxdTools by Crafty</strong> is the official, community-driven platform engineered for advanced Bloxd.io custom tools, layout tailoring, and converter utilities. Our platform is built on custom, proprietary frontend code, meticulously written down to the pixel without a single <code>!important</code> tag to ensure native theme compatibility.</p>
+        <p>Please note that the third-party domain <em>bloxdtools.com</em> was rushed to deployment as a low-effort placeholder using generic stock graphics and templates. In contrast, this platform (moving to the official <code>bloxdtools.github.io</code> organizational network) represents the active, high-effort, custom-coded hub for the Bloxd community.</p>
+
+        <h2>2. Strict No-App-Downloads Policy</h2>
+        <p>To guarantee maximum security for our users, BloxdTools enforces a strict <strong>No-App-Downloads</strong> stance. All texture conversions, interface customizers, and scripting utilities execute 100% sandboxed within your local browser memory using client-side JavaScript. We will never prompt you to download executable files (<code>.exe</code>) or local applications.</p>
+
+        <h2>3. Proprietary &amp; Closed-Source Code</h2>
+        <p>The layout mechanics, core custom stylesheet overrides, interface logic, and custom theme layouts featured on this web app are proprietary property owned by Crafty. Users are strictly prohibited from copying, cloning, redistributing, or reverse-engineering our structural UI code wrappers or frontend architecture.</p>
+
+        <h2>4. User Submission Rules</h2>
+        <p>When participating in our community layout hub or using the moderator submission queues, you must strictly adhere to the following rules:</p>
+        <ul>
+            <li>Your submission must be raw HTML code only.</li>
+            <li>You must upload a project thumbnail as an image attachment with an exact size ratio of 8:5.</li>
+            <li>The title of your submission must match your exact, verified Bloxd username.</li>
+            <li>Your submission must put genuine effort into the design and layout.</li>
+            <li>Submissions must contain absolutely no dangerous installations, app downloads, scripts, executable calls, or inappropriate/violent content.</li>
+        </ul>
+        <p>Every submission is strictly reviewed by a moderator before being added to the database. Violating any of these parameters will result in a permanent ban of your profile and linked OAuth identity.</p>
+
+        <h2>5. Limitation of Liability</h2>
+        <p>BloxdTools is an independent fan utility hub. We are entirely unofficial and are not affiliated with, authorized by, or endorsed by Bloxd.io, GitHub, or Discord.</p>
+    </div>
+    <script>
+      document.querySelectorAll('.tool-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const link = card.querySelector('a');
+    if (link) window.location.href = link.href;
+  });
+  card.style.cursor = 'pointer';
+});
+    </script>
+    
+    <!-- load backend -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabaseClient = supabase.createClient(
+    "https://teqlwaiasfhlptolmyii.supabase.co",
+    "sb_publishable_E_2OtvS_u4YIJSqGXSUMzQ_b7Jy3mvO"
+);
+
+async function loadProfile() {
+    const { data } = await supabaseClient.auth.getUser();
+
+    const user = data.user;
+
+    if (!user) return;
+
+    const avatar =
+        user.user_metadata.avatar_url ||
+        user.user_metadata.picture;
+
+    const userPfp = document.querySelector(".nav-icon.user-pfp");
+    const userMenuPfp = document.querySelector(".drop-menu.user-pfp");
+    const pfpBtn = document.querySelector(".nav-btn.user-pfp");
+    const userDisplayName = document.querySelector('.userDisplayName');
+    const userEmail = document.querySelector('.userEmail');
+    const profileBtn = document.querySelector('.profilebtn.dropdown-item');
+    const usernameElement = document.querySelector('.username');
+    const usersUsername = user.user_metadata.full_name;
+
+    if (avatar) {
+            userPfp.src = avatar;
+            userPfp.alt = "";
+            userPfp.style = "border-radius: 50%; object-fit: cover; --pfpHover: brightness(150%);"
+            userMenuPfp.src = avatar;
+            pfpBtn.title = "";
+            pfpBtn.href = "";
+            pfpBtn.classList.add('loggedin');
+            profileBtn.href = `/user/${usersUsername}/`;
+        
+    }
+        const meta = user.user_metadata;
+        userDisplayName.textContent = meta.custom_claims?.global_name || 
+                                      meta.full_name;
+
+        usernameElement.textContent = meta.user_name || 
+                                      meta.full_name;
+
+        userEmail.textContent = user.email;
+}
+
+loadProfile();
+
+// logout
+async function handleLogout(event) {
+  if (event) event.preventDefault(); 
+  const { error } = await supabaseClient.auth.signOut()
+  window.location.href = '/';
+}
+</script>
+<script>
+        // dropdown toggle
+        const pfpBtn = document.querySelector(".nav-btn.user-pfp");
+        const pfpMenu = document.querySelector('#pfpDropdownMenu');
+
+        pfpBtn.addEventListener('click', (event) => {
+            if (pfpBtn.classList.contains('loggedin')) {
+              // Stops the browser from trying to navigate or refresh when clicked
+                event.preventDefault(); 
+        
+                // Automatically adds 'pfp-dropdown-open' if it's missing, or removes it if it's there
+               pfpMenu.classList.toggle('pfp-dropdown-open');
+            }
+         });
+    </script>
+    <script>
+    const themeLink = document.getElementById("theme");
+
+    const savedTheme =  localStorage.getItem("theme") || "default";
+
+    themeLink.href = `/themes/${savedTheme}.css`;
+    </script>
+</body>
+</html>
